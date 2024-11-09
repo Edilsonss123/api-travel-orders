@@ -1,0 +1,31 @@
+services:
+  api-travel-orders:
+    container_name: api-travel-orders
+    image: edilsonss123/php:8.2
+    ports:
+      - '2050:8000'
+    volumes:
+      - ./api-travel-orders/:/var/www/apps/api-travel-orders
+    depends_on:
+        - db-travel-orders
+    networks: 
+      - net-travel
+    command: sh -c "cd api-travel-orders && php artisan serve --host 0.0.0.0 --port 8000"
+  db-travel-orders:
+    image: mysql:8.0
+    container_name: db-travel-orders
+    environment:
+      MYSQL_ROOT_PASSWORD: "8plin#9@trtert"
+      MYSQL_DATABASE: travel-orders
+      MYSQL_USER: travel-user
+      MYSQL_PASSWORD: "8teste0rd&"
+    ports:
+      - "3358:3306"
+    volumes:
+      - ./data/mysql/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - net-travel
+
+networks: 
+  net-travel:
+    name: net-travel
