@@ -31,7 +31,7 @@ class TravelOrderController extends Controller
         try {
             $orders = $this->travelOrderServicel->getAll([
                 "status" => $request->get("status")
-            ]);
+            ], intval($request->get("per_page")));
 
             return ApiResponse::response([
                 "orders" => $orders->toArray()
@@ -39,6 +39,7 @@ class TravelOrderController extends Controller
         } catch (TravelException $th) {
             return ApiResponse::error($th->getMessage(), [], $th->getCode());
         } catch (Throwable $th) {
+            dd($th);
             return ApiResponse::error();
         }
     }

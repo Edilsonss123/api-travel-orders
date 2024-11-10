@@ -5,22 +5,29 @@ namespace App\Services\Travel;
 use App\Exceptions\TravelException;
 use App\Repositories\Travel\ITravelOrderRepository;
 use App\ValueObject\Travel\TravelOrderCreateVO;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use App\ValueObject\Travel\OrderStatusVO;
 
 class TravelOrderService implements ITravelOrderService
 {
+    const LIMITE_POR_PAGINA = 100;
     private ITravelOrderRepository $travelOrderRepository;
     public function __construct(ITravelOrderRepository $travelOrderRepository)
     {
         $this->travelOrderRepository = $travelOrderRepository;
     }
 
-    public function getAll(array $filters = []): Collection
+    public function getAll(array $filters = [], int $perPage): LengthAwarePaginator
     {
-        $orders = $this->travelOrderRepository->getOrders($filters);
+        $perPage = $this->validatePerPage($perPage);
+        $orders = $this->travelOrderRepository->getOrders($filters, $perPage);
         return $orders;
+    }
+    private function validatePerPage(int $perPage): int
+    {
+        return $perPage == 0 || $perPage > self::LIMITE_POR_PAGINA ? self::LIMITE_POR_PAGINA : $perPage;
     }
 
     public function findById(int $id): TravelException|Model
