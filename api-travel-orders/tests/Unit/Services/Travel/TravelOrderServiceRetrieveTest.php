@@ -23,18 +23,51 @@ class TravelOrderServiceRetrieveTest extends TestCase
     }
     public function testGetAllReturnsOrders()
     {
-        $orders = new Collection([Mockery::mock(TravelOrder::class)->makePartial(), Mockery::mock(TravelOrder::class)->makePartial()]);
+        $paginator = Mockery::mock(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class);
+        $paginator->shouldReceive('items')->andReturn([
+            Mockery::mock(TravelOrder::class)->makePartial(),
+            Mockery::mock(TravelOrder::class)->makePartial()
+        ]);
+        $paginator->shouldReceive('currentPage')->andReturn(1);
+        $paginator->shouldReceive('lastPage')->andReturn(1);
+        $paginator->shouldReceive('count')->andReturn(2);
+
         $this->travelOrderRepositoryMock
             ->shouldReceive('getOrders')
             ->once()
-            ->with([])
-            ->andReturn($orders);
+            ->with([], 100)
+            ->andReturn($paginator);
 
-        $result = $this->travelOrderService->getAll();
+        $result = $this->travelOrderService->getAll([], 100);
 
-        $this->assertInstanceOf(Collection::class, $result);
-        $this->assertCount(2, $result);
+        $this->assertInstanceOf(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class, $result);
+        $this->assertEquals(2, $result->count());
     }
+
+    public function testGetAllReturnsEmptyWhenNoOrdersFoundForStatus()
+    {
+        $paginator = Mockery::mock(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class);
+
+        $paginator->shouldReceive('items')->andReturn([]);
+        $paginator->shouldReceive('currentPage')->andReturn(1);
+        $paginator->shouldReceive('lastPage')->andReturn(1);
+        $paginator->shouldReceive('count')->andReturn(0);
+
+        $filters = ['status' => 999];
+
+        $this->travelOrderRepositoryMock
+            ->shouldReceive('getOrders')
+            ->once()
+            ->with($filters, 100)
+            ->andReturn($paginator);
+
+        $result = $this->travelOrderService->getAll($filters, 100);
+
+        $this->assertInstanceOf(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class, $result);
+
+        $this->assertCount(0, $result->items());
+    }
+
     public function testFindByIdReturnsOrder()
     {
         $order = Mockery::mock(TravelOrder::class)->makePartial();

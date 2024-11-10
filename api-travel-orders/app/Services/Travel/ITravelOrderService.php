@@ -10,7 +10,7 @@ use App\ValueObject\Travel\OrderStatusVO;
 
 interface ITravelOrderService
 {
-    public function getAll(array $filters = [], int $perPage): LengthAwarePaginator;
+    public function getAll(array $filters, int $perPage): LengthAwarePaginator;
     public function findById(int $id): TravelException|Model;
     public function create(TravelOrderCreateVO $travelOrderCreateVO): Model;
     public function updateStatus(int $id, OrderStatusVO $status): Model;

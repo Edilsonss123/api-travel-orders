@@ -19,7 +19,7 @@ class TravelOrderService implements ITravelOrderService
         $this->travelOrderRepository = $travelOrderRepository;
     }
 
-    public function getAll(array $filters = [], int $perPage): LengthAwarePaginator
+    public function getAll(array $filters, int $perPage): LengthAwarePaginator
     {
         $perPage = $this->validatePerPage($perPage);
         $orders = $this->travelOrderRepository->getOrders($filters, $perPage);
