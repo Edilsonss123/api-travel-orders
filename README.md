@@ -12,36 +12,36 @@ A Travel Order API permite gerenciar e controlar solicitações de viagem, com f
 Clone o projeto
 
 ```bash
-  git clone https://github.com/Edilsonss123/travel-order.git travel-order
+git clone https://github.com/Edilsonss123/travel-order.git travel-order
 ```
 
 Entre no diretório do projeto
 ```bash
-  cd travel-order
+cd travel-order
 ```
 
 Entre no diretório do projeto ``api-travel-orders`` e configure o arquivo ``.env``, utilize o ``.env.example`` como modelo, substituindo a configuração de conexão com o banco de dadoo
 ```bash
-  cd travel-order/api-travel-orders
+cd travel-order/api-travel-orders
 
-  DB_CONNECTION=mysql
-  DB_HOST=db-travel-orders
-  DB_PORT=3306
-  DB_DATABASE=travel-orders
-  DB_USERNAME=travel-user
-  DB_PASSWORD="8teste0rd&"
+DB_CONNECTION=mysql
+DB_HOST=db-travel-orders
+DB_PORT=3306
+DB_DATABASE=travel-orders
+DB_USERNAME=travel-user
+DB_PASSWORD="8teste0rd&"
 ```
 
 Antes de iniciar o container, será preciso tornar o script de inicialização da aplicação executável
 
 ```bash
-   chmod +x travel-order/data/api/entrypoint.sh
+chmod +x travel-order/data/api/entrypoint.sh
 ```
 
 Inicie o contêiner com o docker, nesse primeiro momento vai demorar um pouco quando executado pela primeira vez.
 
 ```bash
-  docker-compose up -d
+docker-compose up -d
 ```
 Ao iniciar o container as depências, migrations e seeders serão invocadas atraves do script bash, que tem como ultima ação subir o a aplicação na porta 8000 do container, que é mapeada para a rede host na porta 2050.
 
@@ -49,7 +49,7 @@ Ao iniciar o container as depências, migrations e seeders serão invocadas atra
 Acessando o serviço de api
 
 ```
-  Acesse a api no Postman através da porta 2050 do localhost: https://localhost:2050/
+Acesse a api através da porta 2050 do localhost: https://localhost:2050/
 ```
 
 ## Stack utilizada
