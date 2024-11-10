@@ -58,7 +58,7 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
 - **Back-end:** Laravel
     - Inversão de dependência 
     - Repositório para acesso a camada de dados
-    - Revisionable para revisão de alteração
+    - Revisionable para revisão de alteração através dos logs gravados
 - **Autenticação:** JWT
 - **Banco De Dados:** MySQL
 
