@@ -14,6 +14,7 @@ use App\ValueObject\Travel\OrderStatusVO;
 use DateTimeImmutable;
 use Illuminate\Http\Request;
 use Throwable;
+use Illuminate\Support\Facades\DB;
 
 class TravelOrderController extends Controller
 {

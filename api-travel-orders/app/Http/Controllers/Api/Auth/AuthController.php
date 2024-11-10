@@ -10,6 +10,7 @@ use App\Http\Requests\Auth\UserCreateRequest;
 use App\Services\Auth\IAuthService;
 use App\ValueObject\Auth\UserCreateVO;
 use App\ValueObject\Auth\UserLoginVO;
+use Illuminate\Support\Facades\DB;
 use Throwable;
 
 class AuthController extends Controller
@@ -39,10 +40,7 @@ class AuthController extends Controller
             DB::beginTransaction();
             $userCreateVO = new UserCreateVO($request->name, $request->email, $request->password);
             $this->authService->register($userCreateVO);
-            $response = $this->authService->login([
-                "email" => $userCreateVO->email,
-                "password" => $userCreateVO->password
-            ]);
+            $response = $this->authService->login(new UserLoginVO($userCreateVO->email, $userCreateVO->password));
             DB::commit();
             return ApiResponse::response($response);
         } catch (TravelException $th) {
