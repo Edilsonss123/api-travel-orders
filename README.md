@@ -102,6 +102,6 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Atualização de status de uma solicitação de viagem
  - Autenticação:
     - Criação de usuário
-    - Geração de token acesso usuário
-    - Invalidação de token acesso usuário
+    - Geração do token de acesso do usuário
+    - Invalidação do token de acesso do usuário
 Para acesso a documentação completa da API consulte a [documentação Postman](https://documenter.getpostman.com/view/5807678/2sAY52dKUX)
