@@ -5,12 +5,13 @@ services:
     ports:
       - '2050:8000'
     volumes:
-      - ./api-travel-orders/:/var/www/apps/api-travel-orders
+      - ./api-travel-orders:/var/www/apps/api-travel-orders
+      - ./data/api/entrypoint.sh:/var/www/apps/api-travel-orders/entrypoint.sh
     depends_on:
         - db-travel-orders
     networks: 
       - net-travel
-    command: sh -c "cd api-travel-orders && php artisan serve --host 0.0.0.0 --port 8000"
+    command: /bin/bash /var/www/apps/api-travel-orders/entrypoint.sh
   db-travel-orders:
     image: mysql:8.0
     container_name: db-travel-orders
@@ -23,8 +24,12 @@ services:
       - "3358:3306"
     volumes:
       - ./data/mysql/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+      - db_data:/var/lib/mysql
     networks:
       - net-travel
+
+volumes:
+  db_data:
 
 networks: 
   net-travel:
