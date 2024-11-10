@@ -74,4 +74,4 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Criação de usuário
     - Geração de token acesso usuário
     - Invalidação de token acesso usuário
-Para acesso a documentação completa da API consulta a [documentação Postman] (https://documenter.getpostman.com/view/5807678/2sAY52dKUX)
+Para acesso a documentação completa da API consulta a [documentação Postman](https://documenter.getpostman.com/view/5807678/2sAY52dKUX)
