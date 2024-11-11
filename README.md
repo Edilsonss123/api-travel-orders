@@ -112,4 +112,7 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Criação de usuário
     - Geração do token de acesso do usuário
     - Invalidação do token de acesso do usuário
+Usuario padrão:
+ - email: travel-order-test-2024@gmail.com
+ - senha: travel-order-test-2024
 Para acesso a documentação completa da API consulte a [documentação Postman](https://documenter.getpostman.com/view/5807678/2sAY52dKUX)
