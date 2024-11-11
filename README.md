@@ -73,6 +73,13 @@ Inicie o contêiner com o docker, nesse primeiro momento vai demorar um pouco qu
 ```bash
 docker-compose up -d
 ```
+Para executar os testes unitários será necessário executar de dentro do container, segue o passo a passo
+```bash
+docker exec -it api-travel-orders /bin/bash
+cd api-travel-orders
+php artisan test ou ./vendor/bin/phpunit
+```
+
 Ao iniciar o container as depências, migrations e seeders serão invocadas atraves do script bash, que tem como ultima ação subir o a aplicação na porta 8000 do container, que é mapeada para a rede host na porta 2050.
 
 
@@ -89,6 +96,7 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Inversão de dependência 
     - Repositório para acesso a camada de dados
     - Revisionable para revisão de alteração através dos logs gravados
+- **Testes:** Testes unitários com PHPUnit
 - **Autenticação:** JWT
 - **Banco De Dados:** MySQL
 
