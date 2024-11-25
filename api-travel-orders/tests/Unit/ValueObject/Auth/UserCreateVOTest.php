@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Services\Travel;
+namespace Tests\Unit\ValueObject\Auth;
 
 use App\Exceptions\TravelException;
 use PHPUnit\Framework\TestCase;
@@ -22,11 +22,11 @@ class UserCreateVOTest extends TestCase
                 'password123',
                 'Traveler name is required.'
             ],
-            'invalid_name_not_a_string' => [
-                1,
+            'invalid_name_too_short' => [
+                'Test',
                 'test@example.com',
                 'password123',
-                'Traveler name must be a string.'
+                'Traveler name must be at least 5 characters long.'
             ],
             'invalid_name_too_long' => [
                 str_repeat('a', 256),
@@ -80,12 +80,13 @@ class UserCreateVOTest extends TestCase
      */
     public function test_create_user_validation($name, $email, $password, $expectedErrorMessage)
     {
+
         if ($expectedErrorMessage) {
             $this->expectException(TravelException::class);
         }
         try {
             $userCreateVO = new UserCreateVO($name, $email, $password);
-        } catch (Exception $e) {
+        } catch (TravelException $e) {
             if ($expectedErrorMessage) {
                 $this->assertContains($expectedErrorMessage, $e->getData());
             }

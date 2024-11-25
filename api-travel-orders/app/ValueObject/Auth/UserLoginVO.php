@@ -13,6 +13,8 @@ final class UserLoginVO
         string $email,
         string $password
     ) {
+        $this->validate($email, $password);
+
         $this->email = $email;
         $this->password = $password;
     }
@@ -35,6 +37,8 @@ final class UserLoginVO
     {
         if (empty($email)) {
             return 'Email is required.';
+        } elseif (strlen($email) > 255) {
+            return 'Email may not be greater than 255 characters.';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return 'Invalid email format.';
         }
@@ -46,6 +50,11 @@ final class UserLoginVO
         if (empty($password)) {
             return 'Password is required.';
         }
+
+        if (strlen($password) < 6) {
+            return 'Password must be at least 6 characters long.';
+        }
+        return null;
     }
 
     public function toArray(): array

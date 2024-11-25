@@ -51,8 +51,6 @@ final class TravelOrderCreateVO
     {
         if (empty($travelerName)) {
             return 'Traveler name is required.';
-        } elseif (!is_string($travelerName)) {
-            return 'Traveler name must be a string.';
         } elseif (strlen($travelerName) < 5) {
             return 'Traveler name must be at least 5 characters long.';
         } elseif (strlen($travelerName) > 255) {
@@ -65,8 +63,6 @@ final class TravelOrderCreateVO
     {
         if (empty($destination)) {
             return 'Destination is required.';
-        } elseif (!is_string($destination)) {
-            return 'Destination must be a string.';
         } elseif (strlen($destination) < 5) {
             return 'Destination must be at least 5 characters long.';
         } elseif (strlen($destination) > 255) {
@@ -77,11 +73,7 @@ final class TravelOrderCreateVO
 
     private function validateDepartureDate(DateTimeImmutable $departureDate): null|string
     {
-        if (empty($departureDate)) {
-            return 'Departure date is required.';
-        } elseif (!$departureDate instanceof DateTimeImmutable) {
-            return 'Departure date must be a valid date.';
-        } elseif ($departureDate <= new DateTimeImmutable()) {
+        if ($departureDate <= new DateTimeImmutable()) {
             return 'Departure date must be a future date.';
         }
         return null;
@@ -89,11 +81,7 @@ final class TravelOrderCreateVO
 
     private function validateReturnDate(DateTimeImmutable $returnDate, DateTimeImmutable $departureDate): null|string
     {
-        if (empty($returnDate)) {
-            return 'Return date is required.';
-        } elseif (!$returnDate instanceof DateTimeImmutable) {
-            return 'Return date must be a valid date.';
-        } elseif ($returnDate <= $departureDate) {
+        if ($returnDate <= $departureDate) {
             return 'Return date must be after the departure date.';
         }
         return null;
