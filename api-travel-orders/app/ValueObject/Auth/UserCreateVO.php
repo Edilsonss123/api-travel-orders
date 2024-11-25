@@ -44,10 +44,6 @@ final class UserCreateVO
             return 'Traveler name is required.';
         }
 
-        if (!is_string($name)) {
-            return 'Traveler name must be a string.';
-        }
-
         if (strlen($name) < 5) {
             return 'Traveler name must be at least 5 characters long.';
         }
@@ -64,8 +60,6 @@ final class UserCreateVO
     {
         if (empty($email)) {
             return 'Email is required.';
-        } elseif (!is_string($email)) {
-            return 'Email must be a string.';
         } elseif (strlen($email) > 255) {
             return 'Email may not be greater than 255 characters.';
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

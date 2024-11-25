@@ -22,4 +22,7 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
+# Resultado de cobertura dos testes
+coverage
+
 data/*.txt

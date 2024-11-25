@@ -1,0 +1,4 @@
+#executar testes: 
+    - php artisan test
+    - gerar relatorio dos testes:
+        - php artisan test --coverage-html=coverage

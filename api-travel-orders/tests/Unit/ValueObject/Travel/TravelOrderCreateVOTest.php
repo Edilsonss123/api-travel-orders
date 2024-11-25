@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Services\Travel;
+namespace Tests\Unit\ValueObject\Travel;
 
 use App\Exceptions\TravelException;
 use App\ValueObject\Travel\TravelOrderCreateVO;
@@ -16,7 +16,7 @@ class TravelOrderCreateVOTest extends TestCase
     public function travelOrderDataProvider(): array
     {
         return [
-            'validData' => [
+            'valid_data' => [
                 "John Doe",
                 "Paris",
                 new DateTimeImmutable("2024-12-18 21:40"),
@@ -24,7 +24,7 @@ class TravelOrderCreateVOTest extends TestCase
                 OrderStatusVO::Requested,
                 null
             ],
-            'emptyTravelerName' => [
+            'empty_traveler_name' => [
                 "",
                 "Paris",
                 new DateTimeImmutable("2024-12-18 21:40"),
@@ -40,7 +40,7 @@ class TravelOrderCreateVOTest extends TestCase
                 OrderStatusVO::Requested,
                 'Traveler name must be at least 5 characters long.'
             ],
-            'emptyDestination' => [
+            'empty_destination' => [
                 "John Doe",
                 "",
                 new DateTimeImmutable("2024-12-18 21:40"),
@@ -56,7 +56,7 @@ class TravelOrderCreateVOTest extends TestCase
                 OrderStatusVO::Requested,
                 'Destination must be at least 5 characters long.'
             ],
-            'departureDateInPast' => [
+            'departure_date_in_past' => [
                 "John Doe",
                 "Paris",
                 new DateTimeImmutable("2020-01-01 12:00"),
@@ -64,7 +64,7 @@ class TravelOrderCreateVOTest extends TestCase
                 OrderStatusVO::Requested,
                 'Departure date must be a future date.'
             ],
-            'returnDateBeforeDeparture' => [
+            'return_date_before_departure' => [
                 "John Doe",
                 "Paris",
                 new DateTimeImmutable("2024-12-18 21:40"),
@@ -72,13 +72,29 @@ class TravelOrderCreateVOTest extends TestCase
                 OrderStatusVO::Requested,
                 'Return date must be after the departure date.'
             ],
-            'invalidStatusCanceled' => [
+            'invalid_status_canceled' => [
                 'Test User',
                 'New York',
                 new DateTimeImmutable("2024-12-18 21:40"),
                 new DateTimeImmutable("2025-01-06 08:15"),
                 OrderStatusVO::Canceled,
                 'Travel Order status cannot be canceled.'
+            ],
+            'invalid_name_too_long' => [
+                str_repeat('Test User', 256),
+                'Los Angeles',
+                new DateTimeImmutable("2024-12-18 21:40"),
+                new DateTimeImmutable("2025-01-06 08:15"),
+                OrderStatusVO::Requested,
+                'Traveler name may not be greater than 255 characters.'
+            ],
+            'invalid_destination_too_long' => [
+                'Test User',
+                str_repeat('NY - ', 256),
+                new DateTimeImmutable("2024-12-18 21:40"),
+                new DateTimeImmutable("2025-01-06 08:15"),
+                OrderStatusVO::Requested,
+                'Destination may not be greater than 255 characters.'
             ],
         ];
     }
