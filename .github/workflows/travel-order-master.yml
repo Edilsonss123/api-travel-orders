@@ -2,9 +2,8 @@ name: Auto Increment Tag
 
 on:
   push:
-    branches:
-      - master
-      - implementando-action-test-app
+    branches: [ "master" ]
+
 
 jobs:
   increment-tag:
