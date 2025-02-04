@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - implementando-action-test-app
 
 jobs:
   increment-tag:
