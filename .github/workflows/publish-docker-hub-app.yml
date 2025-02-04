@@ -47,5 +47,5 @@ jobs:
           push: true
           # List of tags
           tags: >
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ env.LAST_TAG }},
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+            ${{ secrets.USER_DOCKER_HUB }}/${{ github.event.repository.name }}:${{ env.LAST_TAG }},
+            ${{ secrets.USER_DOCKER_HUB }}/${{ github.event.repository.name }}:latest
