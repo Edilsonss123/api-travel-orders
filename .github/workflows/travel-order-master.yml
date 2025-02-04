@@ -16,19 +16,26 @@ jobs:
         run: |
           git fetch --tags
 
-          # Pega a última tag
           LAST_TAG=$(git tag --sort=-v:refname | head -n 1)
-          
-          # Incrementa a versão da tag
-          VERSION_TAG="v$((${LAST_TAG#v}+1))"
-          
-          echo $VERSION_TAG
-          
+
+          # Remove o prefixo "v"
+          VERSION_PARTS=(${LAST_TAG#v})
+
+          # Divide a versão em major, minor e patch
+          IFS='.' read -r major minor patch <<< "${VERSION_PARTS}"
+
+          # Incrementa a parte patch da versão
+          patch=$((patch + 1))
+
           # Cria a nova tag
-          #git tag $VERSION_TAG
-          
-          # Empurra a nova tag para o repositório
-          #git push origin $VERSION_TAG
+          VERSION_TAG="v${major}.${minor}.${patch}"
+
+          echo "VERSION_TAG"
+          echo $VERSION_TAG
+
+          # # Empurra a nova tag para o repositório
+          # git tag $VERSION_TAG
+          # git push origin $VERSION_TAG
           
       - name: Push New Tag
         run: |
