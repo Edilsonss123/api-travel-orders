@@ -29,8 +29,8 @@ class TravelOrderServiceCreateTest extends TestCase
         $travelOrderCreateVO = new TravelOrderCreateVO(
             "Test Order",
             "test@example.com",
-            new DateTimeImmutable("2024-12-18 21:40"),
-            new DateTimeImmutable("2025-01-06 08:15"),
+            (new DateTimeImmutable())->modify("+1 days"),
+            (new DateTimeImmutable())->modify("+3 days"),
             OrderStatusVO::Requested
         );
         $order = Mockery::mock(TravelOrder::class)->makePartial();
@@ -53,8 +53,8 @@ class TravelOrderServiceCreateTest extends TestCase
         $travelOrderCreateVO = new TravelOrderCreateVO(
             "Test Order",
             "test@example.com",
-            new DateTimeImmutable("2024-12-18 21:40"),
-            new DateTimeImmutable("2025-01-06 08:15"),
+            (new DateTimeImmutable())->modify("+1 days"),
+            (new DateTimeImmutable())->modify("+3 days"),
             OrderStatusVO::Canceled
         );
         $order = Mockery::mock(TravelOrder::class)->makePartial();

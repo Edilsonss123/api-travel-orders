@@ -32,7 +32,7 @@ final class UserCreateVO
         $errors[] = $this->validateEmail($email);
         $errors[] = $this->validatePassword($password);
 
-        $errors = array_filter($errors);
+        $errors = array_values(array_filter($errors));
         if (count($errors) > 0) {
             throw new TravelException("Invalid Data", 400, null, $errors);
         }
