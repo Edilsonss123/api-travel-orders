@@ -8,7 +8,8 @@ on:
 
 jobs:
   test-app:
-    uses: ./.github/workflows/test-app.yaml
+    uses: ./.github/workflows/test-app.yml
+    secrets: inherit
 		
   build:
     needs: test-app 
@@ -45,4 +46,4 @@ jobs:
   publish-docker-hub-app:
     needs: build
     uses: ./.github/workflows/publish-docker-hub-app.yml
-    secrets: inherit 
+    secrets: inherit
