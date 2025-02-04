@@ -15,6 +15,17 @@ use App\Http\Controllers\Travel\TravelOrderController;
 |
 */
 Route::prefix('travel')->group(function () {
+    Route::get("health", function () {
+        $podName = getHostName();
+        $podIp = getHostByName(getHostName());
+    
+        return \App\Helpers\ApiResponse::response([
+            "server" => "ok",
+            "status" => "healthy",
+            "pod" => $podName,
+            "ip" => $podIp
+        ], "Healthy"); 
+    });
 
     Route::prefix('orders')
         ->middleware('auth:api')
