@@ -16,17 +16,19 @@ jobs:
         run: |
           git fetch --tags
 
+          git describe --tags --abbrev=0
+          
           # Pega a última tag
           LAST_TAG=$(git describe --tags --abbrev=0)
           
           # Incrementa a versão da tag
-          VERSION_TAG="v$((${LAST_TAG#v}+1))"
+          #VERSION_TAG="v$((${LAST_TAG#v}+1))"
           
           # Cria a nova tag
-          git tag $VERSION_TAG
+          #git tag $VERSION_TAG
           
           # Empurra a nova tag para o repositório
-          git push origin $VERSION_TAG
+          #git push origin $VERSION_TAG
           
       - name: Push New Tag
         run: |
