@@ -19,40 +19,40 @@ class TravelOrderCreateVOTest extends TestCase
             'valid_data' => [
                 "John Doe",
                 "Paris",
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 null
             ],
             'empty_traveler_name' => [
                 "",
                 "Paris",
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Traveler name is required.'
             ],
             'invalid_name_too_short' => [
                 'Test',
                 'Las Vegas',
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Traveler name must be at least 5 characters long.'
             ],
             'empty_destination' => [
                 "John Doe",
                 "",
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Destination is required.'
             ],
             'invalid_destination_too_short' => [
                 'Test User',
                 'NY',
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Destination must be at least 5 characters long.'
             ],
@@ -60,14 +60,14 @@ class TravelOrderCreateVOTest extends TestCase
                 "John Doe",
                 "Paris",
                 new DateTimeImmutable("2020-01-01 12:00"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Departure date must be a future date.'
             ],
             'return_date_before_departure' => [
                 "John Doe",
                 "Paris",
-                new DateTimeImmutable("2024-12-18 21:40"),
+                (new DateTimeImmutable())->modify("+1 days"),
                 new DateTimeImmutable("2024-12-17 08:15"),
                 OrderStatusVO::Requested,
                 'Return date must be after the departure date.'
@@ -75,24 +75,24 @@ class TravelOrderCreateVOTest extends TestCase
             'invalid_status_canceled' => [
                 'Test User',
                 'New York',
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Canceled,
                 'Travel Order status cannot be canceled.'
             ],
             'invalid_name_too_long' => [
                 str_repeat('Test User', 256),
                 'Los Angeles',
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Traveler name may not be greater than 255 characters.'
             ],
             'invalid_destination_too_long' => [
                 'Test User',
                 str_repeat('NY - ', 256),
-                new DateTimeImmutable("2024-12-18 21:40"),
-                new DateTimeImmutable("2025-01-06 08:15"),
+                (new DateTimeImmutable())->modify("+1 days"),
+                (new DateTimeImmutable())->modify("+2 days"),
                 OrderStatusVO::Requested,
                 'Destination may not be greater than 255 characters.'
             ],
