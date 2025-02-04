@@ -16,16 +16,13 @@ jobs:
         run: |
           git fetch --tags
 
-          echo "AQUI 1"
-          git tag --sort=-v:refname | head -n 1
-          
-          echo "AQUI 2"
-
           # Pega a última tag
-          # LAST_TAG=$(git tag --sort=-v:refname | head -n 1)
+          LAST_TAG=$(git tag --sort=-v:refname | head -n 1)
           
           # Incrementa a versão da tag
-          #VERSION_TAG="v$((${LAST_TAG#v}+1))"
+          VERSION_TAG="v$((${LAST_TAG#v}+1))"
+          
+          echo $VERSION_TAG
           
           # Cria a nova tag
           #git tag $VERSION_TAG
