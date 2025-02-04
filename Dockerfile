@@ -13,9 +13,7 @@ WORKDIR /var/www/apps/api-travel-orders
 COPY ./api-travel-orders /var/www/apps/api-travel-orders
 
 # Instalar as dependências do Composer (não é necessário rodar toda vez que o código mudar)
-# RUN composer install --no-interaction --prefer-dist
-
-RUN ls -la 
+RUN composer install --no-interaction --prefer-dist
 
 # Copiar o entrypoint script
 COPY ./data/api/entrypoint-prod.sh /var/www/apps/api-travel-orders/entrypoint.sh
