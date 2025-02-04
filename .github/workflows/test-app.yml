@@ -13,21 +13,26 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - name: Copy .env
-        working-directory: ./api-travel-orders
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Recuperando arterfato da aplicação gerado no fluxo principal 
+        uses: actions/download-artifact@v4.1.1
+        with:
+          name: api-travel-orders
 
-      - name: Install Dependencies
-        working-directory: ./api-travel-orders
-        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      # - name: Copy .env
+      #   working-directory: ./api-travel-orders
+      #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-      - name: Generate key
-        working-directory: ./api-travel-orders
-        run: php artisan key:generate
+      # - name: Install Dependencies
+      #   working-directory: ./api-travel-orders
+      #   run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      - name: Directory Permissions
-        working-directory: ./api-travel-orders
-        run: chmod -R 777 storage bootstrap/cache
+      # - name: Generate key
+      #   working-directory: ./api-travel-orders
+      #   run: php artisan key:generate
+
+      # - name: Directory Permissions
+      #   working-directory: ./api-travel-orders
+      #   run: chmod -R 777 storage bootstrap/cache
 
       - name: Create Database
         run: |

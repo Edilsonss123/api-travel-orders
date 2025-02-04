@@ -7,12 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  test-app:
-    uses: ./.github/workflows/test-app.yml
-    secrets: inherit
-
   build:
-    needs: test-app 
     runs-on: ubuntu-latest
 
     steps:
@@ -42,8 +37,12 @@ jobs:
         with:
           name: api-travel-orders
           path: api-travel-orders
+  test-app:
+    needs: build
+    uses: ./.github/workflows/test-app.yml
+    secrets: inherit
 
   publish-docker-hub-app:
-    needs: build
+    needs: [build, test-app]
     uses: ./.github/workflows/publish-docker-hub-app.yml
     secrets: inherit
