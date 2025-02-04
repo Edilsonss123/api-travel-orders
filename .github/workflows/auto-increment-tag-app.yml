@@ -5,7 +5,7 @@ on:
     branches: [ "**" ]
 
 jobs:
-  increment-tag:
+  auto-increment-tag-app:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +33,5 @@ jobs:
           # Empurra a nova tag para o repositório
           git tag $VERSION_TAG
           git push origin $VERSION_TAG
-          
-      - name: Push New Tag
-        run: |
+
           echo "Nova tag criada e empurrada: $VERSION_TAG"

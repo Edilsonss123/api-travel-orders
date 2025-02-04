@@ -2,7 +2,8 @@ name: travel-order-app
 
 on:
   push:
-    tags: [ "**" ]
+    tags:
+      - '*'
 
 jobs:
   build:
