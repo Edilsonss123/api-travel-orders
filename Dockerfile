@@ -19,6 +19,8 @@ RUN composer install --no-interaction --prefer-dist
 COPY ./data/api/entrypoint-prod.sh /var/www/apps/api-travel-orders/entrypoint.sh
 RUN chmod +x /var/www/apps/api-travel-orders/entrypoint.sh
 
+RUN ls 
+ 
 # Gerar as chaves e limpar cache (agora dentro do entrypoint, como discutido anteriormente)
 RUN echo "Gerando chave APP_KEY se necessário..." && \
     if [ -z "$(grep -o 'APP_KEY=.*' .env)" ]; then php artisan key:generate --no-interaction; else echo 'Chave APP_KEY já definida no .env.'; fi && \
