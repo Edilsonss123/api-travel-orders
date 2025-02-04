@@ -10,7 +10,7 @@ jobs:
   test-app:
     uses: ./.github/workflows/test-app.yml
     secrets: inherit
-		
+
   build:
     needs: test-app 
     runs-on: ubuntu-latest
