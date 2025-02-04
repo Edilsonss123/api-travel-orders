@@ -1,11 +1,5 @@
 name: travel-order-app
 
-# on:
-#   push:
-#     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
-
 on:
   push:
     tags:
@@ -44,16 +38,8 @@ jobs:
       #     name: api-travel-orders
       #     path: api-travel-orders
 
-      - name: Get  the last tag on the commit
-        id: get_tag
-        run: |
-          # Recupera a última tag associada ao commit atual
-          VERSION_APP=$(git describe --tags --abbrev=0)
-          echo "${VERSION_APP}"
-          echo "VERSION_APP=${VERSION_APP}" >> $GITHUB_ENV
-
       - name: CHECK VERSION_APP
-        run: echo "github.ref_name ${{ env.VERSION_APP }}"
+        run: echo "github.ref_name ${{github.ref_name}}"
   # test-app:
   #   needs: build
   #   uses: ./.github/workflows/test-app.yml

@@ -1,4 +1,4 @@
-name: Auto Increment Tag
+name: auto-increment-tag-app
 
 on:
   push:
@@ -30,12 +30,9 @@ jobs:
           # Cria a nova tag
           VERSION_TAG="v${major}.${minor}.${patch}"
 
-          echo "VERSION_TAG"
-          echo $VERSION_TAG
-
-          # # Empurra a nova tag para o repositório
-          # git tag $VERSION_TAG
-          # git push origin $VERSION_TAG
+          # Empurra a nova tag para o repositório
+          git tag $VERSION_TAG
+          git push origin $VERSION_TAG
           
       - name: Push New Tag
         run: |

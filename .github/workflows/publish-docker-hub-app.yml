@@ -40,4 +40,4 @@ jobs:
           # Push is a shorthand for --output=type=registry
           push: true
           # List of tags
-          tags: edilsonss123/api-travel-orders:${{ env.VERSION_APP }}
+          tags: edilsonss123/api-travel-orders:${{github.ref_name}}
