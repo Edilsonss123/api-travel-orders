@@ -4,6 +4,25 @@ set -e
 LARAVEL_DIR="/var/www/apps/api-travel-orders"
 cd $LARAVEL_DIR
 
+if [ -z "$(grep -o 'APP_KEY=.*' .env)" ]; then
+    php artisan key:generate --no-interaction
+else
+    echo "Chave APP_KEY já definida no .env."
+fi
+
+echo "Gerando chave JWT se necessário..."
+if [ -z "$(grep -o 'JWT_SECRET=.*' .env)" ]; then
+    php artisan jwt:secret --no-interaction
+else
+    echo "Chave JWT já definida no .env."
+fi
+
+echo "Limpando cache de configuração, rotas e views..."
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
+
 # Rodar as migrations do banco de dados
 echo "Rodando as migrations..."
 php artisan migrate --no-interaction --force
