@@ -9,7 +9,6 @@ on:
 jobs:
   test-app:
     uses: ./.github/workflows/test-app.yaml
-    secrets: inherit
 		
   build:
     needs: test-app 
