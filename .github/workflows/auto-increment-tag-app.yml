@@ -1,0 +1,36 @@
+name: auto-increment-tag-app
+
+on:
+  workflow_call:
+
+jobs:
+  auto-increment-tag-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Faz o checkout do código na branch atual
+
+      - name: Get Last Tag and Increment
+        run: |
+          git fetch --tags
+
+          LAST_TAG=$(git tag --sort=-v:refname | head -n 1)
+
+          # Remove o prefixo "v"
+          VERSION_PARTS=(${LAST_TAG#v})
+
+          # Divide a versão em major, minor e patch
+          IFS='.' read -r major minor patch <<< "${VERSION_PARTS}"
+
+          # Incrementa a parte patch da versão
+          patch=$((patch + 1))
+
+          # Cria a nova tag
+          VERSION_TAG="v${major}.${minor}.${patch}"
+
+          # Empurra a nova tag para o repositório
+          git tag $VERSION_TAG
+          git push origin $VERSION_TAG
+
+          echo "Nova tag criada e empurrada: $VERSION_TAG"
