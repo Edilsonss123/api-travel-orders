@@ -1,8 +1,7 @@
 name: auto-increment-tag-app
 
 on:
-  push:
-    branches: [ "**" ]
+  workflow_call:
 
 jobs:
   auto-increment-tag-app:

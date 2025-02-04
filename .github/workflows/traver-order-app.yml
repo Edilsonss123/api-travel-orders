@@ -2,8 +2,7 @@ name: travel-order-app
 
 on:
   push:
-    tags:
-      - '*'
+    branches: [ "**" ]
 
 jobs:
   build:
@@ -16,36 +15,42 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      # - name: Copy .env
-      #   working-directory: ./api-travel-orders
-      #   run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Copy .env
+        working-directory: ./api-travel-orders
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-      # - name: Install Dependencies
-      #   working-directory: ./api-travel-orders
-      #   run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Install Dependencies
+        working-directory: ./api-travel-orders
+        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
-      # - name: Generate key
-      #   working-directory: ./api-travel-orders
-      #   run: php artisan key:generate
+      - name: Generate key
+        working-directory: ./api-travel-orders
+        run: php artisan key:generate
         
-      # - name: Directory Permissions
-      #   working-directory: ./api-travel-orders
-      #   run: chmod -R 777 storage bootstrap/cache
+      - name: Directory Permissions
+        working-directory: ./api-travel-orders
+        run: chmod -R 777 storage bootstrap/cache
 
-      # - name: Upload a Build Artifact para ser utilizado nos demais steps
-      #   uses: actions/upload-artifact@v4.2.0
-      #   with:
-      #     name: api-travel-orders
-      #     path: api-travel-orders
+      - name: Upload a Build Artifact para ser utilizado nos demais steps
+        uses: actions/upload-artifact@v4.2.0
+        with:
+          name: api-travel-orders
+          path: api-travel-orders
 
       - name: CHECK VERSION_APP
         run: echo "github.ref_name ${{github.ref_name}}"
-  # test-app:
-  #   needs: build
-  #   uses: ./.github/workflows/test-app.yml
-  #   secrets: inherit
 
-  # publish-docker-hub-app:
-  #   needs: [build, test-app]
-  #   uses: ./.github/workflows/publish-docker-hub-app.yml
-  #   secrets: inherit
+  test-app:
+    needs: build
+    uses: ./.github/workflows/test-app.yml
+    secrets: inherit
+
+  auto-increment-tag-app:
+    needs: build
+    uses: ./.github/workflows/auto-increment-tag-app.yml
+    secrets: inherit
+
+  publish-docker-hub-app:
+    needs: [build, test-app]
+    uses: ./.github/workflows/publish-docker-hub-app.yml
+    secrets: inherit
