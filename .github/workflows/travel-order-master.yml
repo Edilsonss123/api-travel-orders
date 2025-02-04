@@ -2,7 +2,7 @@ name: Auto Increment Tag
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "**" ]
 
 jobs:
   increment-tag:
