@@ -31,7 +31,7 @@ jobs:
 
       - name: Get Last Tag
         run: |
-          git fetch --tags
+          git fetch --tags > /dev/null 2>&1
           LAST_TAG=$(git tag --sort=-v:refname | head -n 1)
           echo "LAST_TAG=${LAST_TAG}" >> $GITHUB_ENV  # Salva LAST_TAG como variável de ambiente
 
