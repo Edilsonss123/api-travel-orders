@@ -2,7 +2,7 @@ name: travel-order-app
 
 on:
   push:
-    branches: [ "**" ]
+    branches: [ "master" ]
 
 jobs:
   build:
