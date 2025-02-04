@@ -44,7 +44,7 @@ jobs:
       #     name: api-travel-orders
       #     path: api-travel-orders
 
-      - name: Get the last tag on the commit
+      - name: Get  the last tag on the commit
         id: get_tag
         run: |
           # Recupera a última tag associada ao commit atual

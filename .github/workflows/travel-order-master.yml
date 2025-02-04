@@ -1,0 +1,35 @@
+name: Auto Increment Tag
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  increment-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        uses: actions/setup-git@v2
+
+      - name: Get Last Tag and Increment
+        run: |
+          # Pega a última tag
+          LAST_TAG=$(git describe --tags --abbrev=0)
+          
+          # Incrementa a versão da tag
+          VERSION_TAG="v$((${LAST_TAG#v}+1))"
+          
+          # Cria a nova tag
+          git tag $VERSION_TAG
+          
+          # Empurra a nova tag para o repositório
+          git push origin $VERSION_TAG
+          
+      - name: Push New Tag
+        run: |
+          echo "Nova tag criada e empurrada: $VERSION_TAG"
