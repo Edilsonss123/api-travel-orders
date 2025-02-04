@@ -16,10 +16,13 @@ jobs:
         run: |
           git fetch --tags
 
+          echo "AQUI 1"
           git describe --tags --abbrev=0
           
+          echo "AQUI 2"
+
           # Pega a última tag
-          LAST_TAG=$(git describe --tags --abbrev=0)
+          #LAST_TAG=$(git describe --tags --abbrev=0)
           
           # Incrementa a versão da tag
           #VERSION_TAG="v$((${LAST_TAG#v}+1))"
