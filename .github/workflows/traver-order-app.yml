@@ -1,4 +1,4 @@
-name: test-app
+name: travel-order-app
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  laravel-tests:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -17,7 +17,6 @@ jobs:
         php-version: '8.2'
 
     - uses: actions/checkout@v4
-
     - name: Copy .env
       working-directory: ./api-travel-orders
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
@@ -29,19 +28,18 @@ jobs:
     - name: Generate key
       working-directory: ./api-travel-orders
       run: php artisan key:generate
-
+      
     - name: Directory Permissions
       working-directory: ./api-travel-orders
       run: chmod -R 777 storage bootstrap/cache
 
-    - name: Create Database
-      run: |
-        mkdir -p database
-        touch database/database.sqlite
-        
-    - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      working-directory: ./api-travel-orders
-      run: php artisan test
+    - name: Upload a Build Artifact para ser utilizado nos demais steps
+      uses: actions/upload-artifact@v4.2.0
+      with:
+        name: api-travel-orders
+        path: api-travel-orders
+
+  publish-docker-hub-app:
+    needs: build
+    uses: ./.github/workflows/publish-docker-hub-app.yml
+    secrets: inherit 

@@ -1,0 +1,43 @@
+name: publish-docker-hub-app
+
+on:
+    workflow_call:
+
+jobs:
+  publish-docker-hub-app:
+    environment: "publish-docker-hub-app"
+    runs-on: "ubuntu-latest"
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set Docker Build
+      uses: docker/setup-buildx-action@v3.0.0
+
+    - name: Recuperando arterfato da aplicação gerado no fluxo principal 
+      uses: actions/download-artifact@v4.1.1
+      with:
+        name: api-travel-orders
+
+    - name: CHECK STAGE_DEPLOY
+      run: echo "STAGE_DEPLOY ${{ vars.STAGE_DEPLOY }}"
+      env:
+        STAGE_DEPLOY: ${{ vars.STAGE_DEPLOY }}
+
+    - name: Docker Login
+      uses: docker/login-action@v3.0.0
+      with:
+        username: ${{ secrets.USER_DOCKER_HUB }}
+        password: ${{ secrets.PASSWORD_DOCKER_HUB }}
+
+    - name: Build and push Docker images
+        # You may pin to the exact commit or the version.
+        # uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56
+      uses: docker/build-push-action@v5.1.0
+      with:
+        context: .
+        # Path to the Dockerfile
+        file: ./Dockerfile
+        # Push is a shorthand for --output=type=registry
+        push: true
+        # List of tags
+        tags: edilsonss123/api-travel-orders:${{github.ref_name}}
