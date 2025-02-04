@@ -38,12 +38,21 @@ jobs:
           name: api-travel-orders
           path: api-travel-orders
 
-  test-app:
-    needs: build
-    uses: ./.github/workflows/test-app.yml
-    secrets: inherit
+      - name: GITHUB.REF_NAME
+        run: echo "github.ref_name ${{github.ref_name}}"
 
-  publish-docker-hub-app:
-    needs: [build, test-app]
-    uses: ./.github/workflows/publish-docker-hub-app.yml
-    secrets: inherit
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+
+      - name: CHECK VERSION
+        run: echo "github.ref_name ${{ steps.get_version.outputs.VERSION }}"
+  # test-app:
+  #   needs: build
+  #   uses: ./.github/workflows/test-app.yml
+  #   secrets: inherit
+
+  # publish-docker-hub-app:
+  #   needs: [build, test-app]
+  #   uses: ./.github/workflows/publish-docker-hub-app.yml
+  #   secrets: inherit
