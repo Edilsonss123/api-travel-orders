@@ -14,8 +14,7 @@ jobs:
 
       - name: Get Last Tag and Increment
         run: |
-          git status
-
+          git fetch --tags
           git tag
 
       - name: Push New Tag
