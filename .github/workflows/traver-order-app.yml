@@ -40,18 +40,17 @@ jobs:
       - name: CHECK VERSION_APP
         run: echo "github.ref_name ${{github.ref_name}}"
 
-  # test-app:
-  #   needs: build
-  #   uses: ./.github/workflows/test-app.yml
-  #   secrets: inherit
+  test-app:
+    needs: build
+    uses: ./.github/workflows/test-app.yml
+    secrets: inherit
 
-  # auto-increment-tag-app:
-  #   needs: [build, test-app]
-  #   uses: ./.github/workflows/auto-increment-tag-app.yml
-  #   secrets: inherit
+  auto-increment-tag-app:
+    needs: [build, test-app]
+    uses: ./.github/workflows/auto-increment-tag-app.yml
+    secrets: inherit
 
   publish-docker-hub-app:
-    # needs: [auto-increment-tag-app]
-    needs: [build]
+    needs: [build, test-app, auto-increment-tag-app]
     uses: ./.github/workflows/publish-docker-hub-app.yml
     secrets: inherit
