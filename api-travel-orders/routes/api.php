@@ -26,6 +26,30 @@ Route::prefix('travel')->group(function () {
             "ip" => $podIp
         ], "Healthy"); 
     });
+    
+    Route::get("load-generator", function () {
+
+        // Simulando o uso de memória
+        $largeArray = [];
+        for ($i = 0; $i < 1000000; $i++) {
+            $largeArray[] = str_repeat("A", 1024);  // Cria strings de 1KB cada
+        }
+    
+        // Simulando processamento pesado
+        $startTime = microtime(true);
+        $factorial = 1;
+        for ($i = 1; $i <= 10000; $i++) {
+            $factorial *= $i;  // Calcula o fatorial de 10000 (operações pesadas)
+        }
+        $endTime = microtime(true);
+        $executionTime = $endTime - $startTime;  // Tempo de execução
+    
+        // Retornando a resposta com tempo de execução
+        return \App\Helpers\ApiResponse::response([
+            'execution_time' => $executionTime,
+            'message' => 'Load generator test completed.'
+        ], "load-generator");
+    });
 
     Route::prefix('orders')
         ->middleware('auth:api')
