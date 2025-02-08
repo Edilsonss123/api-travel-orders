@@ -23,6 +23,6 @@ Homestead.json
 .phpunit.result.cache
 
 # Resultado de cobertura dos testes
-coverage
+api-travel-orders/tests/result
 
 data/*.txt

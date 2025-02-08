@@ -83,6 +83,7 @@ class UserCreateVOTest extends TestCase
 
         if ($expectedErrorMessage) {
             $this->expectException(TravelException::class);
+            $this->expectExceptionCode(400);
         }
         try {
             $userCreateVO = new UserCreateVO($name, $email, $password);

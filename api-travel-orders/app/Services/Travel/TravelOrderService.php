@@ -27,7 +27,13 @@ class TravelOrderService implements ITravelOrderService
     }
     private function validatePerPage(int $perPage): int
     {
-        return $perPage == 0 || $perPage > self::LIMITE_POR_PAGINA ? self::LIMITE_POR_PAGINA : $perPage;
+        if ($perPage <= 0) {
+            return self::LIMITE_POR_PAGINA;
+        }
+        if ($perPage > self::LIMITE_POR_PAGINA) {
+            return self::LIMITE_POR_PAGINA;
+        }
+        return $perPage;
     }
 
     public function findById(int $id): TravelException|Model

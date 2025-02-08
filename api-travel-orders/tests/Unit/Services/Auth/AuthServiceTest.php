@@ -40,7 +40,7 @@ class AuthServiceTest extends TestCase
 
         $response = $this->authService->login($userLoginVO);
 
-        $this->assertArrayHasKey('authorization', $response);
+        $this->assertEquals(["user", "authorization"], array_keys($response));
         $this->assertEquals($hashPassword, $response['authorization']['token']);
         $this->assertEquals('bearer', $response['authorization']['type']);
     }
@@ -55,6 +55,7 @@ class AuthServiceTest extends TestCase
 
         $this->expectException(TravelException::class);
         $this->expectExceptionMessage('Unauthorized');
+        $this->expectExceptionCode(401);
 
         $this->authService->login($userLoginVO);
     }
@@ -102,6 +103,7 @@ class AuthServiceTest extends TestCase
 
         $response = $this->authService->refresh();
 
+        $this->assertEquals(["user", "authorization"], array_keys($response));
         $this->assertEquals($hashPassword, $response['authorization']['token']);
         $this->assertEquals('bearer', $response['authorization']['type']);
     }
@@ -109,10 +111,12 @@ class AuthServiceTest extends TestCase
     public function test_logout()
     {
         Auth::shouldReceive('logout')
-            ->once();
+        ->once()
+        ->andReturnNull();
 
         $this->authService->logout();
 
+        Auth::shouldHaveReceived('logout')->once();
         $this->assertTrue(true);
     }
 

@@ -6,7 +6,7 @@ use App\Exceptions\TravelException;
 use App\Models\Travel\TravelOrder;
 use App\Repositories\Travel\ITravelOrderRepository;
 use App\Services\Travel\TravelOrderService;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
@@ -42,6 +42,32 @@ class TravelOrderServiceRetrieveTest extends TestCase
 
         $this->assertInstanceOf(\Illuminate\Contracts\Pagination\LengthAwarePaginator::class, $result);
         $this->assertEquals(2, $result->count());
+    }
+
+    /**
+     * @dataProvider providerPerPageValues
+     */
+    public function testGetAllAppliesLimitCorrectly($perPage, $expected)
+    {
+        $this->travelOrderRepositoryMock->shouldReceive('getOrders')
+            ->withAnyArgs()
+            ->andReturnUsing(fn ($filters, $perPage) => new LengthAwarePaginator([], 0, $perPage));
+
+        $result = $this->travelOrderService->getAll([], $perPage);
+        $this->assertEquals($expected, $result->perPage());
+    }
+
+    public static function providerPerPageValues()
+    {
+        $limite = TravelOrderService::LIMITE_POR_PAGINA;
+
+        return [
+            'perPage = 0 deve ser alterado para LIMITE_POR_PAGINA' => [0, $limite],
+            'perPage maior que LIMITE_POR_PAGINA deve ser ajustado' => [$limite + 10, $limite],
+            'perPage dentro do limite deve manter o valor' => [$limite - 10, $limite - 10],
+            'perPage igual ao LIMITE_POR_PAGINA deve manter o valor' => [$limite, $limite],
+            'perPage negativo deve ser ajustado para LIMITE_POR_PAGINA' => [-10, $limite],
+        ];
     }
 
     public function testGetAllReturnsEmptyWhenNoOrdersFoundForStatus()
@@ -92,6 +118,7 @@ class TravelOrderServiceRetrieveTest extends TestCase
 
         $this->expectException(TravelException::class);
         $this->expectExceptionMessage('Entity not found');
+        $this->expectExceptionCode(404);
 
         $this->travelOrderService->findById(999);
     }
