@@ -122,4 +122,9 @@ class TravelOrderServiceRetrieveTest extends TestCase
 
         $this->travelOrderService->findById(999);
     }
+
+    protected function tearDown(): void
+    {
+        Mockery::close();
+    }
 }

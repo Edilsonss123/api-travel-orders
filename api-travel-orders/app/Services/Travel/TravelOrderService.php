@@ -36,7 +36,7 @@ class TravelOrderService implements ITravelOrderService
         return $perPage;
     }
 
-    public function findById(int $id): TravelException|Model
+    public function findById(int $id): Model
     {
         $order = $this->travelOrderRepository->findOrderById($id);
         if (!$order) {
