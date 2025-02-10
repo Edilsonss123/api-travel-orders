@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Healt;
+namespace Tests\Feature\Health;
 
 use App\Exceptions\TravelException;
 use App\Services\Health\HealthApi;
