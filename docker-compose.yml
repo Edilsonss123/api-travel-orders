@@ -4,6 +4,7 @@ services:
     image: edilsonss123/php:8.2
     ports:
       - '2050:8000'
+    restart: always
     volumes:
       - ./api-travel-orders:/var/www/apps/api-travel-orders
       - ./data/conf.d/memory.ini:/usr/local/etc/php/conf.d/docker-php-ext-memory.ini
@@ -22,6 +23,7 @@ services:
       MYSQL_DATABASE: travel-orders
       MYSQL_USER: travel-user
       MYSQL_PASSWORD: "8teste0rd&"
+      restart: always
     ports:
       - "3358:3306"
     volumes:

@@ -6,6 +6,7 @@ use App\Exceptions\TravelException;
 use App\Models\User;
 use App\Services\Auth\IAuthService;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Mockery;
 use Tests\Feature\TestCase;
@@ -111,17 +112,7 @@ class UserAuthenticateTest extends TestCase
 
     public function testLogoutSuccess()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-        $response = $this->withToken($token)
+        $response = $this->withToken($this->getAuthToken())
         ->postJson('/api/travel/auth/logout');
 
         $response->assertStatus(200)
@@ -141,24 +132,13 @@ class UserAuthenticateTest extends TestCase
 
     public function testLogoutFailsWithTravelException()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('logout')
         ->andThrow(new TravelException("Logout failed", 500));
     
         $this->app->instance(IAuthService::class, $mockAuthService);
 
-        $response = $this->withToken($token)
+        $response = $this->withToken($this->getAuthToken())
         ->postJson('/api/travel/auth/logout');
 
         $response->assertStatus(500)
@@ -169,24 +149,13 @@ class UserAuthenticateTest extends TestCase
 
     public function testLogoutFailsWithThrowable()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('logout')
         ->andThrow(new Exception(__('apiResponse.exceptionMessageError'), 500));
     
         $this->app->instance(IAuthService::class, $mockAuthService);
 
-        $response = $this->withToken($token)
+        $response = $this->withToken($this->getAuthToken())
         ->postJson('/api/travel/auth/logout');
 
         $response->assertStatus(500)
@@ -197,17 +166,7 @@ class UserAuthenticateTest extends TestCase
 
     public function testRefreshSuccess()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-        $response = $this->withToken($token)->postJson('/api/travel/auth/refresh');
+        $response = $this->withToken($this->getAuthToken())->postJson('/api/travel/auth/refresh');
         
         $response->assertStatus(status: 200)
         ->assertJsonStructure([
@@ -227,24 +186,13 @@ class UserAuthenticateTest extends TestCase
 
     public function testRefreshFailureWithTravelException()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('refresh')
         ->andThrow(new TravelException("Erro ao tentar atualizar o token", 500));
 
         $this->app->instance(IAuthService::class, $mockAuthService);
 
-        $response = $this->withToken($token)->postJson('/api/travel/auth/refresh');
+        $response = $this->withToken($this->getAuthToken())->postJson('/api/travel/auth/refresh');
 
         $response->assertStatus(500)
         ->assertJson([
@@ -254,17 +202,6 @@ class UserAuthenticateTest extends TestCase
 
     public function testRefreshFailureWithThrowable()
     {
-        $user = User::factory()->create([
-            'password' => Hash::make('secret123')
-        ]);
-
-        $response = $this->postJson('/api/travel/auth/login', [
-            'email' => $user->email,
-            'password' => 'secret123',
-        ]);
-
-        $token = $response->json('result.authorization.token');
-
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('refresh')
         ->andThrow(new Exception(__('apiResponse.exceptionMessageError'), 500));
@@ -272,7 +209,7 @@ class UserAuthenticateTest extends TestCase
 
         $this->app->instance(IAuthService::class, $mockAuthService);
 
-        $response = $this->withToken($token)->postJson('/api/travel/auth/refresh');
+        $response = $this->withToken($this->getAuthToken())->postJson('/api/travel/auth/refresh');
 
         $response->assertStatus(500)
         ->assertJson([
@@ -280,4 +217,17 @@ class UserAuthenticateTest extends TestCase
         ]);
     }
 
+    private function getAuthToken()
+    {
+        $password = uniqid("secret");
+        $user = User::factory()->create([
+            'password' => Hash::make($password)
+        ]);
+        return Auth::attempt(['email' => $user->email, 'password' => $password]);
+    }
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        Mockery::close();
+    }
 }

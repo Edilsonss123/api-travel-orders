@@ -123,4 +123,10 @@ class UserCreateTest extends TestCase
             'message' => __('apiResponse.exceptionMessageError')
         ]);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        Mockery::close();
+    }
 }

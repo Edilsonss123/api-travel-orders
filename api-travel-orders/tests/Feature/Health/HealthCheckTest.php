@@ -80,5 +80,11 @@ class HealthCheckTest extends TestCase
         $this->assertFalse($responseData['success']);
         $this->assertEmpty($responseData['errors']);
     }
+
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+        Mockery::close();
+    }
     
 }
