@@ -3,9 +3,11 @@
 namespace Tests\Feature\Travel;
 
 use App\Exceptions\TravelException;
+use App\Models\Travel\OrderStatus;
 use App\Models\Travel\TravelOrder;
 use App\Models\User;
 use App\Services\Travel\ITravelOrderService;
+use App\ValueObject\Travel\OrderStatusVO;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -228,7 +230,28 @@ class TravelOrderRetrieveTest extends TestCase
             "errors" => []
         ]);
     }
+    public function testStatusHasManyTravelOrders()
+    {
+        $status = OrderStatus::find(OrderStatusVO::Approved->value);
+        $orders = TravelOrder::factory()->count(3)->create([
+            "status" => $status->id
+        ]);
 
+        $this->assertInstanceOf(TravelOrder::class, $status->travelOrders()->first());
+        $this->assertCount(3, $status->travelOrders);
+    }
+
+    public function testTravelOrderBelongsToOrderStatus()
+    {
+        $status = OrderStatus::find(OrderStatusVO::Requested->value);
+        $order = TravelOrder::factory()->create([
+            'status' => $status->id
+        ]);
+
+        $this->assertInstanceOf(OrderStatus::class, $order->travelStatus);
+        $this->assertEquals($status->id, $order->travelStatus->id);
+    }
+    
     private function getAuthToken()
     {
         $password = uniqid("secret");

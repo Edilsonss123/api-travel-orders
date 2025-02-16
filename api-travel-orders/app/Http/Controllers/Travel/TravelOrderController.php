@@ -97,7 +97,7 @@ class TravelOrderController extends Controller
         }
     }
 
-    function showTravelStatusOrder()
+    public function showTravelStatusOrder()
     {
         try {
             $orderStatus = $this->orderStatusService->getAll();

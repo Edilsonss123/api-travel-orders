@@ -19,6 +19,6 @@ class TravelOrder extends Model
 
     public function travelStatus()
     {
-        return $this->belongsTo(OrderStatus::class, 'status');
+        return $this->belongsTo(OrderStatus::class, 'status', 'id');
     }
 }
