@@ -40,7 +40,6 @@ jobs:
     needs: common-setup
     steps:
       - name: Execute tests Unit via PHPUnit
-        working-directory: ${{ github.workspace }}/api-travel-orders
         run: php artisan test --filter Unit --env=testing
 
   feature-tests:
@@ -51,7 +50,6 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ${{ needs.common-setup.outputs.database-path }}
-        working-directory: ${{ github.workspace }}/api-travel-orders
         run: php artisan test --env=testing --filter Feature
 
   coverage:
@@ -71,14 +69,13 @@ jobs:
 
       - name: Run PHPUnit with Coverage
         run: |
-          php artisan test --env=testing --coverage-html=./coverage
-        working-directory: ${{ github.workspace }}/api-travel-orders
+          php artisan test:coverage --env=testing
 
       - name: Upload Coverage Results
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: ./coverage
+          path: ./tests/result/coverage
 
   infection:
     runs-on: ubuntu-latest
@@ -101,11 +98,11 @@ jobs:
 
       - name: Run Infection
         run: |
-          ./vendor/bin/infection --only-covered --coverage=coverage/coverage.xml
+          php artisan test:mutation --env=testing
         working-directory: ${{ github.workspace }}/api-travel-orders
 
       - name: Upload Infection Report
         uses: actions/upload-artifact@v4
         with:
-          name: infection-report
-          path: ./infection-report
+          name: mutation-report
+          path: ./tests/result/mutation
