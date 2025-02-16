@@ -24,6 +24,9 @@ jobs:
         run: php artisan test --filter Unit
 
       - name: Create Database
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: ${{ github.workspace }}/api-travel-orders/database/database.sqlite
         run: |
           mkdir -p ./api-travel-orders/database
           touch ./api-travel-orders/database/database.sqlite
