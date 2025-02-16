@@ -18,10 +18,6 @@ jobs:
         with:
           name: api-travel-orders
           path: api-travel-orders
-          
-      - name: Execute tests Unit via PHPUnit
-        working-directory: ./api-travel-orders
-        run: php artisan test --filter Unit
 
       - name: Create Database
         env:
@@ -33,12 +29,20 @@ jobs:
           chmod 777 ./api-travel-orders/database/database.sqlite
 
       - name: Migrate Database
-        run: php artisan migrate
+        run: php artisan migrate --env=testing
         working-directory: ./api-travel-orders
+
+      - name: JWT APP
+        run: php artisan jwt:secret --env=testing
+        working-directory: ./api-travel-orders
+
+      - name: Execute tests Unit via PHPUnit
+        working-directory: ./api-travel-orders
+        run: php artisan test --filter Unit --env=testing
 
       - name: Execute tests Feature via PHPUnit
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ${{ github.workspace }}/api-travel-orders/database/database.sqlite
         working-directory: ./api-travel-orders
-        run: php artisan test --filter Feature
+        run: php artisan test --env=testing --filter Feature
