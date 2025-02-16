@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-
+$providersAdicionais = [];
+if (env('APP_ENV') === 'testing') {
+    $providersAdicionais[] = App\Providers\SqliteTestServiceProvider::class;
+}
 return [
 
     /*
@@ -154,7 +157,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array_merge([
 
         /*
          * Laravel Framework Service Providers...
@@ -194,9 +197,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\RepositoryServiceProvider::class
+        App\Providers\RepositoryServiceProvider::class,
 
-    ],
+    ], $providersAdicionais),
 
     /*
     |--------------------------------------------------------------------------
