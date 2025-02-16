@@ -26,6 +26,6 @@ class ExecTestWithCoverageCommand extends Command
     public function handle()
     {
         $this->info('Executando os testes com cobertura em HTML...');
-        passthru('php artisan test --coverage --coverage-html=tests/result/coverage');
+        passthru('php artisan test --env=testing --coverage --coverage-html=tests/result/coverage');
     }
 }
