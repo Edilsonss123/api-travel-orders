@@ -12,6 +12,6 @@ class OrderStatus extends Model
 
     public function travelOrders()
     {
-        return $this->hasMany(TravelOrder::class);
+        return $this->hasMany(TravelOrder::class, "status", "id");
     }
 }

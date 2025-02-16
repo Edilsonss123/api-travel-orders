@@ -39,7 +39,6 @@ class TravelOrderController extends Controller
         } catch (TravelException $th) {
             return ApiResponse::error($th->getMessage(), [], $th->getCode());
         } catch (Throwable $th) {
-            dd($th);
             return ApiResponse::error();
         }
     }
@@ -98,7 +97,7 @@ class TravelOrderController extends Controller
         }
     }
 
-    function showTravelStatusOrder()
+    public function showTravelStatusOrder()
     {
         try {
             $orderStatus = $this->orderStatusService->getAll();

@@ -110,9 +110,9 @@ class TravelOrderServiceUpdateTest extends TestCase
     public function statusTransitionDataProvider()
     {
         return [
-            "already_same" => [OrderStatusVO::Requested, OrderStatusVO::Requested, 'The status has already been requested'],
-            "change_to_requested" => [OrderStatusVO::Approved, OrderStatusVO::Requested, 'Unable to change status from approved to requested'],
-            "change_from_canceled_to_approved" => [OrderStatusVO::Canceled, OrderStatusVO::Approved, 'Unable to change status from canceled to approved'],
+            "already_same" => [OrderStatusVO::Requested, OrderStatusVO::Requested, 'The status has already been requested', 400],
+            "change_to_requested" => [OrderStatusVO::Approved, OrderStatusVO::Requested, 'Unable to change status from approved to requested', 400],
+            "change_from_canceled_to_approved" => [OrderStatusVO::Canceled, OrderStatusVO::Approved, 'Unable to change status from canceled to approved', 400],
             "change_from_requested_to_approved" => [OrderStatusVO::Requested, OrderStatusVO::Approved, null],
         ];
     }
@@ -121,7 +121,7 @@ class TravelOrderServiceUpdateTest extends TestCase
      * @dataProvider statusTransitionDataProvider
      */
 
-    public function testUpdateStatusThrowsExceptionWhenStatusIsUnchanged(OrderStatusVO $initialStatus, OrderStatusVO $newStatus, string $expectedExceptionMessage = null)
+    public function testUpdateStatusThrowsExceptionWhenStatusIsUnchanged(OrderStatusVO $initialStatus, OrderStatusVO $newStatus, string $expectedExceptionMessage = null, $codeHttp=null)
     {
         $orderStatus = Mockery::mock(OrderStatus::class);
         $orderStatus->shouldReceive('getAttribute')
@@ -170,6 +170,7 @@ class TravelOrderServiceUpdateTest extends TestCase
         if ($expectedExceptionMessage) {
             $this->expectException(TravelException::class);
             $this->expectExceptionMessage($expectedExceptionMessage);
+            $this->expectExceptionCode($codeHttp);
         }
 
         $result = $this->travelOrderService->updateStatus(1, $newStatus);

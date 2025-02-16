@@ -21,9 +21,9 @@ class TravelOrderFactory extends Factory
         return [
             'travelerName' => $this->faker->name,
             'destination' => $this->faker->city,
-            'departureDate' => $this->faker->date,
-            'returnDate' => $this->faker->dateTimeBetween('+1 week', '+1 month')->format('Y-m-d'),
-            'status' => OrderStatusVO::from($this->faker->randomElement([1, 2, 3]))
+            'departureDate' => $this->faker->dateTime()->format('Y-m-d H:i:s'),
+            'returnDate' => $this->faker->dateTimeBetween('+1 week', '+1 month')->format('Y-m-d H:i:s'),
+            'status' => OrderStatusVO::from($this->faker->randomElement([1, 2, 3]))->value
         ];
     }
 }

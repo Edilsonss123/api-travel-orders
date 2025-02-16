@@ -113,6 +113,7 @@ class TravelOrderCreateVOTest extends TestCase
     ) {
         if ($expectedError) {
             $this->expectException(TravelException::class);
+            $this->expectExceptionCode(400);
         }
         try {
             $travelOrderCreateVO = new TravelOrderCreateVO(

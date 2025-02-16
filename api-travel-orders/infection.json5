@@ -1,0 +1,26 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": [
+            "app/Exceptions",
+            "app/Http",
+            "app/Models",
+            "app/Repositories",
+            "app/Services",
+            "app/ValueObject"
+        ]
+        // "excludes": []
+    },
+    "logs": {
+        "text": "tests/result/mutation/infection.log",
+        "html": "tests/result/mutation/index.html"
+    },
+    "mutators": {
+        "@default": true,
+        "GreaterThan": false,
+        "LessThan": false,
+        "GreaterThanOrEqualTo": false,
+        "LessThanOrEqualTo": false,
+        "UnwrapArrayValues": false
+    }
+}

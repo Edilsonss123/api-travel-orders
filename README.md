@@ -73,12 +73,31 @@ Inicie o contêiner com o docker, nesse primeiro momento vai demorar um pouco qu
 ```bash
 docker-compose up -d
 ```
-Para executar os testes unitários será necessário executar de dentro do container, segue o passo a passo
+Para executar os testes será necessário executar de dentro do container, segue o passo a passo
 ```bash
 docker exec -it api-travel-orders /bin/bash
 cd api-travel-orders
 php artisan test ou ./vendor/bin/phpunit
 ```
+ - Teste Unitário
+    ```bash
+    php artisan test --filter Unit
+    ```
+- Teste Integração
+    ```bash
+    php artisan test ou ./vendor/bin/phpunit
+    ```
+ - Gerar cobertura de teste
+    ```bash
+    php artisan test:coverage
+    ```
+ - Gerar cobertura de teste de mutação
+    ```bash
+    php artisan test:mutation
+    ```
+Para acessar o resultado da cobertura de teste teste de mutação acesse o localmente os resultados servido pelo Nginx
+ - [Coverage](http://localhost:2052/) - http://localhost:2052/
+ - [Mutation](http://localhost:2052/mutation/) - http://localhost:2052/mutation/
 
 Ao iniciar o container as depências, migrations e seeders serão invocadas atraves do script bash, que tem como ultima ação subir o a aplicação na porta 8000 do container, que é mapeada para a rede host na porta 2050.
 
@@ -96,7 +115,12 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Inversão de dependência 
     - Repositório para acesso a camada de dados
     - Revisionable para revisão de alteração através dos logs gravados
-- **Testes:** Testes unitários com PHPUnit
+- **Testes:** 
+    - Testes unitários com PHPUnit
+    - Testes integração com PHPUnit
+    - Testes mutação com Infection
+    - Relatório de cobertura de testes - Coverage
+    - Relatório de cobertura de mutação - Infection
 - **Autenticação:** JWT
 - **Banco De Dados:** MySQL
 
@@ -112,6 +136,9 @@ Acesse a api através da porta 2050 do localhost: https://localhost:2050/
     - Criação de usuário
     - Geração do token de acesso do usuário
     - Invalidação do token de acesso do usuário
+ - Health
+    - Verificação de status API
+    - Load generate, teste de carga 
 Usuario padrão:
  - email: travel-order-test-2024@gmail.com
  - senha: travel-order-test-2024

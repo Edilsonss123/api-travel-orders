@@ -59,6 +59,7 @@ class UserLoginVOTest extends TestCase
 
         if ($expectedErrorMessage) {
             $this->expectException(TravelException::class);
+            $this->expectExceptionCode(400);
         }
         try {
             $userLoginVO = new UserLoginVO($email, $password);
