@@ -31,6 +31,6 @@ jobs:
       - name: Execute tests Feature via PHPUnit
         env:
           DB_CONNECTION: sqlite
-          DB_DATABASE: database/database.sqlite
+          DB_DATABASE: ./api-travel-orders/database/database.sqlite
         working-directory: ./api-travel-orders
         run: php artisan test --filter Feature
