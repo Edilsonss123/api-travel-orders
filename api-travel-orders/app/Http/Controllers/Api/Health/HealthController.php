@@ -17,7 +17,6 @@ class HealthController extends Controller
     public function getStatusApi(): JsonResponse
     {
         try {
-            dd(database_path('database.sqlite'));
             $infoPod = $this->healthApi->getInfoPod();
             return ApiResponse::response([
                 "server" => "ok",

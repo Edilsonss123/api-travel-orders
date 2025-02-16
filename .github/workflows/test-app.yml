@@ -26,7 +26,7 @@ jobs:
       - name: Create Database
         run: |
           mkdir -p database
-          touch database/database.sqlite
+          touch ./api-travel-orders/database/database.sqlite
 
       - name: Execute tests Feature via PHPUnit
         env:
