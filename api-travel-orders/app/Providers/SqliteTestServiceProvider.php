@@ -20,13 +20,16 @@ class SqliteTestServiceProvider extends ServiceProvider
     public function boot()
     {
         if (config('app.env') === 'testing' && config('database.default') === 'sqlite') {
-            DB::statement('PRAGMA foreign_keys = ON;');
-            DB::statement('PRAGMA encoding = "UTF-8";');
-            DB::statement('PRAGMA journal_mode = WAL;');
-            DB::statement('PRAGMA synchronous = NORMAL;');
-            DB::statement('PRAGMA cache_size = 100000;');
-            DB::statement('PRAGMA temp_store = MEMORY;');
-            DB::statement('PRAGMA busy_timeout = 5000;');
+            $pdo = DB::connection()->getPdo();
+            $pdo->exec(<<<SQL
+                PRAGMA foreign_keys = ON;
+                PRAGMA encoding = "UTF-8";
+                PRAGMA journal_mode = WAL;
+                PRAGMA synchronous = NORMAL;
+                PRAGMA cache_size = 100000;
+                PRAGMA temp_store = MEMORY;
+                PRAGMA busy_timeout = 5000;
+            SQL);
         }
     }
 }
