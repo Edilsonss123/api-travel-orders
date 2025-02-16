@@ -40,6 +40,7 @@ jobs:
     needs: common-setup
     steps:
       - name: Execute tests Unit via PHPUnit
+        working-directory: ${{ github.workspace }}/api-travel-orders
         run: php artisan test --filter Unit --env=testing
 
   feature-tests:
@@ -50,6 +51,7 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: ${{ needs.common-setup.outputs.database-path }}
+        working-directory: ${{ github.workspace }}/api-travel-orders
         run: php artisan test --env=testing --filter Feature
 
   coverage:
@@ -70,6 +72,7 @@ jobs:
       - name: Run PHPUnit with Coverage
         run: |
           php artisan test:coverage --env=testing
+        working-directory: ${{ github.workspace }}/api-travel-orders
 
       - name: Upload Coverage Results
         uses: actions/upload-artifact@v4
