@@ -4,51 +4,15 @@ on:
   workflow_call:
 
 jobs:
-  common-setup:
-    runs-on: ubuntu-latest
-    outputs:
-      database-path: ${{ github.workspace }}/api-travel-orders/database/database.sqlite
-    steps:
-      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
-        with:
-          php-version: '8.2'
-
-      - uses: actions/checkout@v4
-
-      - name: Recuperando artefato da aplicação gerado no fluxo principal
-        uses: actions/download-artifact@v4.1.3
-        with:
-          name: api-travel-orders
-          path: api-travel-orders
-
-      - name: Create Database
-        run: |
-          mkdir -p api-travel-orders/database
-          touch api-travel-orders/database/database.sqlite
-          chmod 777 api-travel-orders/database/database.sqlite
-
-      - name: Migrate Database
-        run: php artisan migrate --env=testing
-        working-directory: api-travel-orders
-
-      - name: JWT APP
-        run: php artisan jwt:secret --env=testing
-        working-directory: api-travel-orders
-
-      - name: Save application state
-        uses: actions/upload-artifact@v4
-        with:
-          name: api-travel-orders-prepared
-          path: api-travel-orders
-
   unit-tests:
     runs-on: ubuntu-latest
-    needs: common-setup
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download prepared application
         uses: actions/download-artifact@v4
         with:
-          name: api-travel-orders-prepared
+          name: api-travel-orders
           path: api-travel-orders
 
       - name: Execute tests Unit via PHPUnit
@@ -57,18 +21,34 @@ jobs:
 
   feature-tests:
     runs-on: ubuntu-latest
-    needs: common-setup
+    needs: unit-tests
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download prepared application
         uses: actions/download-artifact@v4
         with:
-          name: api-travel-orders-prepared
+          name: api-travel-orders
           path: api-travel-orders
+
+      - name: Ensure database exists
+        run: |
+          mkdir -p api-travel-orders/database
+          touch api-travel-orders/database/database.sqlite
+          chmod 777 api-travel-orders/database/database.sqlite
+
+      - name: Run Migrations
+        working-directory: api-travel-orders
+        run: php artisan migrate --env=testing
+
+      - name: JWT APP
+        run: php artisan jwt:secret --env=testing
+        working-directory: api-travel-orders
 
       - name: Execute tests Feature via PHPUnit
         env:
           DB_CONNECTION: sqlite
-          DB_DATABASE: ${{ needs.common-setup.outputs.database-path }}
+          DB_DATABASE: api-travel-orders/database/database.sqlite
         working-directory: api-travel-orders
         run: php artisan test --env=testing --filter Feature
 
@@ -76,10 +56,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [unit-tests, feature-tests]
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download prepared application
         uses: actions/download-artifact@v4
         with:
-          name: api-travel-orders-prepared
+          name: api-travel-orders
           path: api-travel-orders
 
       - name: Run PHPUnit with Coverage
@@ -96,10 +78,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [unit-tests, feature-tests]
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download prepared application
         uses: actions/download-artifact@v4
         with:
-          name: api-travel-orders-prepared
+          name: api-travel-orders
           path: api-travel-orders
 
       - name: Run Infection
