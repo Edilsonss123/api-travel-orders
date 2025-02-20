@@ -20,7 +20,7 @@ class SqliteTestServiceProvider extends ServiceProvider
     public function boot()
     {
         if (config('app.env') === 'testing' && config('database.default') === 'sqlite') {
-            $pdo = DB::connection()->getPdo();
+            /* $pdo = DB::connection()->getPdo();
             $pdo->exec(<<<SQL
                 PRAGMA foreign_keys = ON;
                 PRAGMA encoding = "UTF-8";
@@ -29,7 +29,7 @@ class SqliteTestServiceProvider extends ServiceProvider
                 PRAGMA cache_size = 100000;
                 PRAGMA temp_store = MEMORY;
                 PRAGMA busy_timeout = 5000;
-            SQL);
+            SQL); */
         }
     }
 }
