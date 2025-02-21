@@ -67,13 +67,54 @@ jobs:
           DB_DATABASE: database/database.sqlite
         working-directory: api-travel-orders
         run: php artisan test --env=testing --filter Feature
+  coverage-and-infection-tests:
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    steps:
+      - uses: actions/checkout@v4
 
-      - name: Execute tests Infection
+      - name: Download prepared application
+        uses: actions/download-artifact@v4
+        with:
+          name: api-travel-orders
+          path: api-travel-orders
+
+      - name: Ensure database exists
+        working-directory: api-travel-orders
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+          chmod 777 database/database.sqlite
+          ls database
+
+      - name: Run Migrations
+        working-directory: api-travel-orders
+        run: php artisan migrate --env=testing
+
+      - name: JWT APP
+        working-directory: api-travel-orders
+        run: php artisan jwt:secret --env=testing
+
+      - name: Install and Configure Xdebug
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php-xdebug
+            
+          XDEBUG_INI=/etc/php/$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')/cli/conf.d/20-xdebug.ini
+
+          echo "zend_extension=xdebug" | sudo tee -a $XDEBUG_INI
+          echo "xdebug.mode=coverage" | sudo tee -a $XDEBUG_INI
+          echo "xdebug.start_with_request=yes" | sudo tee -a $XDEBUG_INI
+          echo "xdebug.client_host=127.0.0.1" | sudo tee -a $XDEBUG_INI
+
+          php -m | grep xdebug
+
+      - name: Execute tests Feature via PHPUnit
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
         working-directory: api-travel-orders
-        run: php artisan test:mutation --env=testing
+        run: php artisan test --env=testing --filter Feature
 
       - name: Execute tests Coverage
         env:
@@ -82,8 +123,16 @@ jobs:
         working-directory: api-travel-orders
         run: php artisan test:coverage --env=testing
 
+      - name: Execute tests Infection
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        working-directory: api-travel-orders
+        run: php artisan test:mutation --env=testing
+
       - name: Save Prepared Environment
         uses: actions/upload-artifact@v4
         with:
-          name: api-travel-orders-test
-          path: api-travel-orders
+          name: coverage-and-infection-tests
+          path: api-travel-orders/tests/result
+          
