@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="AppServiceProvider.php" path="/Providers">
+    <totals>
+      <lines total="31" comments="11" code="20" executable="4" executed="4" percent="100.00"/>
+      <methods count="2" tested="2" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Providers\AppServiceProvider" start="7" executable="4" executed="4" crap="2">
+      <namespace name="App\Providers"/>
+      <method name="register" signature="register()" start="14" end="17" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="boot" signature="boot()" start="24" end="29" crap="1" executable="3" executed="3" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="17">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiFail"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testTotalTimeApiLoadGenerator"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorFail"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStatusHasManyTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testTravelOrderBelongsToOrderStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+      <line nr="26">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiFail"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testTotalTimeApiLoadGenerator"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorFail"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStatusHasManyTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testTravelOrderBelongsToOrderStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+      <line nr="27">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiFail"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testTotalTimeApiLoadGenerator"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorFail"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStatusHasManyTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testTravelOrderBelongsToOrderStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+      <line nr="28">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testHealthApiFail"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorSuccess"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testTotalTimeApiLoadGenerator"/>
+        <covered by="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorFail"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStatusHasManyTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testTravelOrderBelongsToOrderStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Providers</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Support\ServiceProvider</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6"/>
+      <line no="7">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AppServiceProvider</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ServiceProvider</token>
+      </line>
+      <line no="8">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="9">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="10">
+        <token name="T_DOC_COMMENT">     * Register any application services.</token>
+      </line>
+      <line no="11">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="12">
+        <token name="T_DOC_COMMENT">     * @return void</token>
+      </line>
+      <line no="13">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">register</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_COMMENT">//</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="18"/>
+      <line no="19">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT">     * Bootstrap any application services.</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT">     * @return void</token>
+      </line>
+      <line no="23">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">boot</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">app</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">bind</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Auth\IAuthService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Auth\AuthService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">app</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">bind</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Travel\ITravelOrderService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Travel\TravelOrderService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">app</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">bind</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Travel\IOrderStatusService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_FULLY_QUALIFIED">\App\Services\Travel\OrderStatusService</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_CLASS">class</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="30">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="31"/>
+    </source>
+  </file>
+</phpunit>

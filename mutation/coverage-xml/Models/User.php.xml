@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="User.php" path="/Models">
+    <totals>
+      <lines total="62" comments="16" code="46" executable="4" executed="4" percent="100.00"/>
+      <methods count="2" tested="2" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Models\User" start="12" executable="4" executed="4" crap="2">
+      <namespace name="App\Models"/>
+      <method name="getJWTIdentifier" signature="getJWTIdentifier()" start="50" end="53" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getJWTCustomClaims" signature="getJWTCustomClaims()" start="55" end="60" crap="1" executable="3" executed="3" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="52">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+      </line>
+      <line nr="58">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+      </line>
+      <line nr="57">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+      </line>
+      <line nr="59">
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Models</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_COMMENT">// use Illuminate\Contracts\Auth\MustVerifyEmail;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Database\Eloquent\Factories\HasFactory</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Foundation\Auth\User</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_AS">as</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Authenticatable</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Notifications\Notifiable</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Laravel\Sanctum\HasApiTokens</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11"/>
+      <line no="12">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">User</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Authenticatable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">JWTSubject</token>
+      </line>
+      <line no="13">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HasApiTokens</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">HasFactory</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Notifiable</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17"/>
+      <line no="18">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="19">
+        <token name="T_DOC_COMMENT">     * The attributes that are mass assignable.</token>
+      </line>
+      <line no="20">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="21">
+        <token name="T_DOC_COMMENT">     * @var array&lt;int, string&gt;</token>
+      </line>
+      <line no="22">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$fillable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'password'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="28"/>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="30">
+        <token name="T_DOC_COMMENT">     * The attributes that should be hidden for serialization.</token>
+      </line>
+      <line no="31">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="32">
+        <token name="T_DOC_COMMENT">     * @var array&lt;int, string&gt;</token>
+      </line>
+      <line no="33">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$hidden</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'password'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email_verified_at'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'updated_at'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'remember_token'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="40"/>
+      <line no="41">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_DOC_COMMENT">/**</token>
+      </line>
+      <line no="42">
+        <token name="T_DOC_COMMENT">     * The attributes that should be cast.</token>
+      </line>
+      <line no="43">
+        <token name="T_DOC_COMMENT">     *</token>
+      </line>
+      <line no="44">
+        <token name="T_DOC_COMMENT">     * @var array&lt;string, string&gt;</token>
+      </line>
+      <line no="45">
+        <token name="T_DOC_COMMENT">     */</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$casts</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email_verified_at'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'datetime'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="49"/>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getJWTIdentifier</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getKey</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="54"/>
+      <line no="55">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getJWTCustomClaims</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">email</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="61">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="62"/>
+    </source>
+  </file>
+</phpunit>

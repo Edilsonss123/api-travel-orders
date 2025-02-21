@@ -1,0 +1,1489 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="TravelOrderCreateVO.php" path="/ValueObject/Travel">
+    <totals>
+      <lines total="109" comments="0" code="109" executable="45" executed="45" percent="100.00"/>
+      <methods count="8" tested="8" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\ValueObject\Travel\TravelOrderCreateVO" start="8" executable="45" executed="45" crap="18">
+      <namespace name="App\ValueObject\Travel"/>
+      <method name="__construct" signature="__construct(string $travelerName, string $destination, DateTimeImmutable $departureDate, DateTimeImmutable $returnDate, App\ValueObject\Travel\OrderStatusVO $status)" start="15" end="29" crap="1" executable="6" executed="6" coverage="100"/>
+      <method name="validate" signature="validate(string $travelerName, string $destination, DateTimeImmutable $departureDate, DateTimeImmutable $returnDate, App\ValueObject\Travel\OrderStatusVO $status): void" start="31" end="48" crap="2" executable="9" executed="9" coverage="100"/>
+      <method name="validateTravelerName" signature="validateTravelerName(string $travelerName): string|null" start="50" end="60" crap="4" executable="7" executed="7" coverage="100"/>
+      <method name="validateDestination" signature="validateDestination(string $destination): null|string" start="62" end="72" crap="4" executable="7" executed="7" coverage="100"/>
+      <method name="validateDepartureDate" signature="validateDepartureDate(DateTimeImmutable $departureDate): null|string" start="74" end="80" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="validateReturnDate" signature="validateReturnDate(DateTimeImmutable $returnDate, DateTimeImmutable $departureDate): null|string" start="82" end="88" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="validateStatus" signature="validateStatus(App\ValueObject\Travel\OrderStatusVO $status): ?string" start="90" end="96" crap="2" executable="3" executed="3" coverage="100"/>
+      <method name="toArray" signature="toArray(): array" start="98" end="107" crap="1" executable="7" executed="7" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="22">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="24">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="25">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="26">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="27">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="28">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="38">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="39">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="40">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="41">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="42">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="43">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="44">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="45">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="46">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+      </line>
+      <line nr="52">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="53">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+      </line>
+      <line nr="54">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="55">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+      </line>
+      <line nr="56">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="57">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+      </line>
+      <line nr="59">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="64">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="65">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+      </line>
+      <line nr="66">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="67">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+      </line>
+      <line nr="68">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="69">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+      </line>
+      <line nr="71">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="76">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="77">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+      </line>
+      <line nr="79">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="84">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="85">
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+      </line>
+      <line nr="87">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="92">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="93">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;"/>
+      </line>
+      <line nr="95">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="101">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="102">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="103">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="104">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="105">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="100">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="106">
+        <covered by="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder"/>
+        <covered by="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\ValueObject\Travel</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Exceptions\TravelException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7"/>
+      <line no="8">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelOrderCreateVO</token>
+      </line>
+      <line no="9">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">OrderStatusVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">OrderStatusVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="23"/>
+      <line no="24">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">travelerName</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">destination</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">departureDate</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">returnDate</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">status</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="30"/>
+      <line no="31">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">OrderStatusVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateTravelerName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateDestination</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateDepartureDate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateReturnDate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateStatus</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">array_values</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">array_filter</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">count</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">0</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="46">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"Invalid Data"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">400</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="49"/>
+      <line no="50">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateTravelerName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">null</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name is required.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LT">&lt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">5</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name must be at least 5 characters long.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$travelerName</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">255</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="57">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name may not be greater than 255 characters.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="58">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="61"/>
+      <line no="62">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateDestination</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="64">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="65">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Destination is required.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="66">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LT">&lt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">5</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Destination must be at least 5 characters long.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$destination</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">255</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Destination may not be greater than 255 characters.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="70">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="71">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="73"/>
+      <line no="74">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateDepartureDate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="75">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="76">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_SMALLER_OR_EQUAL">&lt;=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="77">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Departure date must be a future date.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="81"/>
+      <line no="82">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateReturnDate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DateTimeImmutable</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="83">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$returnDate</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_SMALLER_OR_EQUAL">&lt;=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$departureDate</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Return date must be after the departure date.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="87">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="89"/>
+      <line no="90">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateStatus</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">OrderStatusVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="91">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="92">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$status</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">value</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IS_IDENTICAL">===</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">OrderStatusVO</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">Canceled</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">value</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="93">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Travel Order status cannot be canceled.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="94">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="95">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="96">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="97"/>
+      <line no="98">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">toArray</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="99">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="100">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="101">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'travelerName'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">travelerName</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="102">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'destination'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">destination</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="103">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'departureDate'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">departureDate</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">format</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Y-m-d H:i:s'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="104">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'returnDate'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">returnDate</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">format</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Y-m-d H:i:s'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="105">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'status'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">status</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">value</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="106">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="107">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="108">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="109"/>
+    </source>
+  </file>
+</phpunit>

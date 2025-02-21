@@ -1,0 +1,1062 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="UserCreateVO.php" path="/ValueObject/Auth">
+    <totals>
+      <lines total="92" comments="0" code="92" executable="35" executed="35" percent="100.00"/>
+      <methods count="6" tested="6" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\ValueObject\Auth\UserCreateVO" start="7" executable="35" executed="35" crap="15">
+      <namespace name="App\ValueObject\Auth"/>
+      <method name="__construct" signature="__construct(string $name, string $email, string $password)" start="13" end="23" crap="1" executable="4" executed="4" coverage="100"/>
+      <method name="validate" signature="validate(string $name, string $email, string $password): void" start="25" end="39" crap="2" executable="7" executed="7" coverage="100"/>
+      <method name="validateName" signature="validateName(string $name): ?string" start="41" end="56" crap="4" executable="7" executed="7" coverage="100"/>
+      <method name="validateEmail" signature="validateEmail(string $email): ?string" start="59" end="69" crap="4" executable="7" executed="7" coverage="100"/>
+      <method name="validatePassword" signature="validatePassword(string $password): ?string" start="71" end="81" crap="3" executable="5" executed="5" coverage="100"/>
+      <method name="toArray" signature="toArray(): array" start="83" end="90" crap="1" executable="5" executed="5" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="18">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="20">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="21">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="22">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="30">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="31">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="32">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="33">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="35">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="36">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="37">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+      </line>
+      <line nr="43">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="44">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+      </line>
+      <line nr="47">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="48">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+      </line>
+      <line nr="51">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="52">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+      </line>
+      <line nr="55">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="61">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="62">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+      </line>
+      <line nr="63">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="64">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+      </line>
+      <line nr="65">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="66">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+      </line>
+      <line nr="68">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="73">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="74">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;"/>
+      </line>
+      <line nr="77">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="78">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;"/>
+      </line>
+      <line nr="80">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;"/>
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable"/>
+      </line>
+      <line nr="86">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+      </line>
+      <line nr="87">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+      </line>
+      <line nr="88">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+      </line>
+      <line nr="85">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+      </line>
+      <line nr="89">
+        <covered by="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\ValueObject\Auth</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Exceptions\TravelException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6"/>
+      <line no="7">
+        <token name="T_FINAL">final</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">UserCreateVO</token>
+      </line>
+      <line no="8">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="9">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_READONLY">readonly</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12"/>
+      <line no="13">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19"/>
+      <line no="20">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">email</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">password</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="24"/>
+      <line no="25">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validateEmail</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">validatePassword</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="34"/>
+      <line no="35">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">array_values</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">array_filter</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">count</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">0</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"Invalid Data"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">400</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$errors</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="40"/>
+      <line no="41">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateName</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name is required.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="46"/>
+      <line no="47">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LT">&lt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">5</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name must be at least 5 characters long.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="50"/>
+      <line no="51">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$name</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">255</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Traveler name may not be greater than 255 characters.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="54"/>
+      <line no="55">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="57"/>
+      <line no="58"/>
+      <line no="59">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validateEmail</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="61">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="62">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Email is required.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="63">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_GT">&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">255</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="64">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Email may not be greater than 255 characters.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="65">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ELSEIF">elseif</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_STRING">filter_var</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$email</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">FILTER_VALIDATE_EMAIL</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="66">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Invalid email format.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="67">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="68">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="69">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="70"/>
+      <line no="71">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">validatePassword</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">string</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_QUESTION_MARK">?</token>
+        <token name="T_STRING">string</token>
+      </line>
+      <line no="72">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="73">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="74">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Password is required.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="75">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="76"/>
+      <line no="77">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">strlen</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LT">&lt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">6</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Password must be at least 6 characters long.'</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="80">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="81">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="82"/>
+      <line no="83">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">toArray</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="84">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="85">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="86">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="87">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">email</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="88">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'password'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">password</token>
+      </line>
+      <line no="89">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="90">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="91">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="92"/>
+    </source>
+  </file>
+</phpunit>

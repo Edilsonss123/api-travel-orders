@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="OrderStatusService.php" path="/Services/Travel">
+    <totals>
+      <lines total="21" comments="0" code="21" executable="2" executed="2" percent="100.00"/>
+      <methods count="2" tested="2" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Services\Travel\OrderStatusService" start="8" executable="2" executed="2" crap="2">
+      <namespace name="App\Services\Travel"/>
+      <method name="__construct" signature="__construct(App\Repositories\Travel\IOrderStatusRepository $orderStatusRepository)" start="11" end="14" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getAll" signature="getAll(): Illuminate\Database\Eloquent\Collection" start="16" end="19" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="13">
+        <covered by="Tests\Unit\Services\Travel\OrderStatusServiceTest::testGetAllReturnsOrdersStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+      <line nr="18">
+        <covered by="Tests\Unit\Services\Travel\OrderStatusServiceTest::testGetAllReturnsOrdersStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Services\Travel</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Repositories\Travel\IOrderStatusRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Database\Eloquent\Collection</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7"/>
+      <line no="8">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">OrderStatusService</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">IOrderStatusService</token>
+      </line>
+      <line no="9">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="10">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">IOrderStatusRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$orderStatusRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">IOrderStatusRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$orderStatusRepository</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="12">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">orderStatusRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$orderStatusRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="15"/>
+      <line no="16">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getAll</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Collection</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">orderStatusRepository</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">getOrdersStatus</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="20">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="21"/>
+    </source>
+  </file>
+</phpunit>

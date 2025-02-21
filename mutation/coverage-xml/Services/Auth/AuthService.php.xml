@@ -1,0 +1,600 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="AuthService.php" path="/Services/Auth">
+    <totals>
+      <lines total="63" comments="0" code="63" executable="25" executed="25" percent="100.00"/>
+      <methods count="5" tested="5" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Services\Auth\AuthService" start="14" executable="25" executed="25" crap="6">
+      <namespace name="App\Services\Auth"/>
+      <method name="__construct" signature="__construct(App\Repositories\User\IUserRepository $userRepository)" start="17" end="20" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="login" signature="login(App\ValueObject\Auth\UserLoginVO $userLoginVO): array" start="21" end="34" crap="2" executable="10" executed="10" coverage="100"/>
+      <method name="register" signature="register(App\ValueObject\Auth\UserCreateVO $userCreateVO): App\Models\User" start="36" end="45" crap="1" executable="6" executed="6" coverage="100"/>
+      <method name="refresh" signature="refresh(): array" start="47" end="56" crap="1" executable="7" executed="7" coverage="100"/>
+      <method name="logout" signature="logout(): void" start="58" end="61" crap="1" executable="1" executed="1" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="19">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_failed"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_logout"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;"/>
+      </line>
+      <line nr="23">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_failed"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="24">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_failed"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="25">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_failed"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials"/>
+      </line>
+      <line nr="28">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="30">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="31">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="38">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="39">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="40">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="41">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="44">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="50">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="52">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="53">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="60">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_logout"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess"/>
+      </line>
+      <line nr="27">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="29">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="32">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="33">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="42">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful"/>
+        <covered by="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess"/>
+      </line>
+      <line nr="49">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="51">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="54">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+      <line nr="55">
+        <covered by="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh"/>
+        <covered by="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Services\Auth</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Exceptions\TravelException</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Models\User</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Repositories\User\IUserRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Services\Auth\IAuthService</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\ValueObject\Auth\UserCreateVO</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\ValueObject\Auth\UserLoginVO</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="11">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Support\Facades\Hash</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="12">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Support\Facades\Auth</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13"/>
+      <line no="14">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">AuthService</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">IAuthService</token>
+      </line>
+      <line no="15">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PRIVATE">private</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">IUserRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="17">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">__construct</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">IUserRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userRepository</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="18">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">userRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">login</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">UserLoginVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userLoginVO</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$token</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Auth</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">attempt</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$userLoginVO</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">toArray</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_VARIABLE">$token</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_THROW">throw</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelException</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'Unauthorized'</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_LNUMBER">401</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'user'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Auth</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">user</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'authorization'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'token'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$token</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'type'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'bearer'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="35"/>
+      <line no="36">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">register</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">UserCreateVO</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userCreateVO</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">User</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">userRepository</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">create</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'name'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userCreateVO</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">name</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="40">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'email'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$userCreateVO</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">email</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="41">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'password'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Hash</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">make</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$userCreateVO</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">password</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="43"/>
+      <line no="44">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$user</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="45">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="46"/>
+      <line no="47">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">refresh</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="50">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'user'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Auth</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">user</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="51">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'authorization'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'token'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Auth</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">refresh</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'type'</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_DOUBLE_ARROW">=&gt;</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'bearer'</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="57"/>
+      <line no="58">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">logout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">void</token>
+      </line>
+      <line no="59">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="60">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_STRING">Auth</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">logout</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="61">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="62">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="63"/>
+    </source>
+  </file>
+</phpunit>

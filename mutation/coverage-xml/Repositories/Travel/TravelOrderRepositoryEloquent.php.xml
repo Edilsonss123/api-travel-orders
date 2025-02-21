@@ -1,0 +1,657 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <file name="TravelOrderRepositoryEloquent.php" path="/Repositories/Travel">
+    <totals>
+      <lines total="58" comments="0" code="58" executable="25" executed="25" percent="100.00"/>
+      <methods count="5" tested="5" percent="100.00"/>
+      <functions count="0" tested="0" percent="0"/>
+      <classes count="1" tested="1" percent="100.00"/>
+      <traits count="0" tested="0" percent="0"/>
+    </totals>
+    <class name="App\Repositories\Travel\TravelOrderRepositoryEloquent" start="11" executable="25" executed="25" crap="5">
+      <namespace name="App\Repositories\Travel"/>
+      <method name="model" signature="model(): App\Models\Travel\TravelOrder" start="13" end="16" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="getOrders" signature="getOrders(array $filters, int $perPage): Illuminate\Contracts\Pagination\LengthAwarePaginator" start="18" end="39" crap="1" executable="19" executed="19" coverage="100"/>
+      <method name="findOrderById" signature="findOrderById($id): null|\Illuminate\Database\Eloquent\Model" start="41" end="44" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="createOrder" signature="createOrder(array $data): Illuminate\Database\Eloquent\Model" start="46" end="49" crap="1" executable="1" executed="1" coverage="100"/>
+      <method name="updateOrder" signature="updateOrder($id, array $data): Illuminate\Database\Eloquent\Model" start="51" end="56" crap="1" executable="3" executed="3" coverage="100"/>
+    </class>
+    <coverage>
+      <line nr="15">
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication"/>
+      </line>
+      <line nr="20">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="21">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="30">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="31">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="32">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+      </line>
+      <line nr="33">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="34">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="35">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="36">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="37">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="38">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="43">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound"/>
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+      </line>
+      <line nr="48">
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus"/>
+      </line>
+      <line nr="53">
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+      </line>
+      <line nr="54">
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+      </line>
+      <line nr="55">
+        <covered by="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess"/>
+      </line>
+      <line nr="22">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="23">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="24">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="25">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="26">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="27">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="28">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+      <line nr="29">
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;"/>
+        <covered by="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;"/>
+      </line>
+    </coverage>
+    <source>
+      <line no="1">
+        <token name="T_OPEN_TAG">&lt;?php</token>
+      </line>
+      <line no="2"/>
+      <line no="3">
+        <token name="T_NAMESPACE">namespace</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Repositories\Travel</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="4"/>
+      <line no="5">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Models\Travel\TravelOrder</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="6">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">App\Repositories\Repository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="7">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Contracts\Pagination\LengthAwarePaginator</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="8">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Database\Eloquent\Collection</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="9">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Database\Eloquent\Model</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="10"/>
+      <line no="11">
+        <token name="T_CLASS">class</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelOrderRepositoryEloquent</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EXTENDS">extends</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Repository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_IMPLEMENTS">implements</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">ITravelOrderRepository</token>
+      </line>
+      <line no="12">
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="13">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PROTECTED">protected</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">model</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelOrder</token>
+      </line>
+      <line no="14">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="15">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_NEW">new</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">TravelOrder</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="16">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="17"/>
+      <line no="18">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">getOrders</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$filters</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">int</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$perPage</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">LengthAwarePaginator</token>
+      </line>
+      <line no="19">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="20">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$orders</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">model</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">select</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_OPEN_SQUARE">[</token>
+      </line>
+      <line no="21">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.id"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="22">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.travelerName"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="23">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.destination"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="24">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.departureDate"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="25">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.returnDate"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="26">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.status"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="27">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"order_status.status as statusDescription"</token>
+        <token name="T_COMMA">,</token>
+      </line>
+      <line no="28">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.created_at"</token>
+      </line>
+      <line no="29">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="30">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">join</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"order_status"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"order_status.id"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"="</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.status"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="31">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">when</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_EXCLAMATION_MARK">!</token>
+        <token name="T_EMPTY">empty</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$filters</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"status"</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$where</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$filters</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="32">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_VARIABLE">$where</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">where</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.status"</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$filters</token>
+        <token name="T_OPEN_SQUARE">[</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"status"</token>
+        <token name="T_CLOSE_SQUARE">]</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="33">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_CLOSE_CURLY">}</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="34">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">orderby</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.created_at"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="35">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">orderby</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.status"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="36">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">orderby</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">"travel_orders.destination"</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+      </line>
+      <line no="37">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">paginate</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$perPage</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="38">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$orders</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="40"/>
+      <line no="41">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">findOrderById</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">null</token>
+        <token name="T_PIPE">|</token>
+        <token name="T_STRING">Model</token>
+      </line>
+      <line no="42">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="43">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">model</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">find</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="44">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="45"/>
+      <line no="46">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">createOrder</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Model</token>
+      </line>
+      <line no="47">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="48">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">model</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">create</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="49">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="50"/>
+      <line no="51">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_PUBLIC">public</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_FUNCTION">function</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">updateOrder</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_ARRAY">array</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_COLON">:</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">Model</token>
+      </line>
+      <line no="52">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="53">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$order</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">model</token>
+        <token name="T_DOUBLE_COLON">::</token>
+        <token name="T_STRING">findOrFail</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$id</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="54">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$order</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">update</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_VARIABLE">$data</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="55">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_RETURN">return</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$order</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="56">
+        <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="57">
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="58"/>
+    </source>
+  </file>
+</phpunit>

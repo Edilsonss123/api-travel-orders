@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Fri Feb 21 23:36:03 UTC 2025" phpunit="9.6.21" coverage="9.2.32">
+    <runtime name="PHP" version="8.3.6" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="3.2.0"/>
+  </build>
+  <project source="/home/runner/work/api-travel-orders/api-travel-orders/api-travel-orders/app">
+    <tests>
+      <test name="Tests\Unit\Services\Auth\AuthServiceTest::test_login_successful" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Auth\AuthServiceTest::test_login_failed" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Auth\AuthServiceTest::test_register_successful" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Auth\AuthServiceTest::test_refresh" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Auth\AuthServiceTest::test_logout" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\OrderStatusServiceTest::testGetAllReturnsOrdersStatus" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateReturnsOrder" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceCreateTest::testCreateOrderStatusCanceledReturnException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllReturnsOrders" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllAppliesLimitCorrectly with data set &quot;perPage = 0 deve ser alterado para LIMITE_POR_PAGINA&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllAppliesLimitCorrectly with data set &quot;perPage maior que LIMITE_POR_PAGINA deve ser ajustado&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllAppliesLimitCorrectly with data set &quot;perPage dentro do limite deve manter o valor&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllAppliesLimitCorrectly with data set &quot;perPage igual ao LIMITE_POR_PAGINA deve manter o valor&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllAppliesLimitCorrectly with data set &quot;perPage negativo deve ser ajustado para LIMITE_POR_PAGINA&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testGetAllReturnsEmptyWhenNoOrdersFoundForStatus" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testFindByIdReturnsOrder" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceRetrieveTest::testFindByIdThrowsTravelExceptionWhenOrderNotFound" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusThrowsExceptionWhenStatusIsSame" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusReturnsUpdatedOrder" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusThrowsExceptionWhenStatusIsUnchanged with data set &quot;already_same&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusThrowsExceptionWhenStatusIsUnchanged with data set &quot;change_to_requested&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusThrowsExceptionWhenStatusIsUnchanged with data set &quot;change_from_canceled_to_approved&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\Services\Travel\TravelOrderServiceUpdateTest::testUpdateStatusThrowsExceptionWhenStatusIsUnchanged with data set &quot;change_from_requested_to_approved&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_name_too_long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_format&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_create_user_validation with data set &quot;valid_data&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserCreateVOTest::test_to_array_method" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;invalid_email_empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;invalid_email&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;invalid_email_too_long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;empty_password&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;invalid_password_too_short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_create_user_validation with data set &quot;valid_data&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Auth\UserLoginVOTest::test_to_array_method" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;valid_data&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_traveler_name&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;empty_destination&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;departure_date_in_past&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;return_date_before_departure&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_status_canceled&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_name_too_long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Unit\ValueObject\Travel\TravelOrderCreateVOTest::testTravelOrderCreateVO with data set &quot;invalid_destination_too_long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithValidCredentials" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithInvalidCredentials" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithTravelException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testUserCanAuthenticateWithThrowable" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testUserCannotAuthenticateWithoutCredentials" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testLogoutSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWhenNotAuthenticated" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithTravelException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testLogoutFailsWithThrowable" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testRefreshSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithUnauthenticated" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithTravelException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserAuthenticateTest::testRefreshFailureWithThrowable" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;data empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name short&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;name long&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;email invalid&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateUserFail with data set &quot;password invalid&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithTravelException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Auth\UserCreateTest::testCreateFailsWithThrowable" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Health\HealthCheckTest::testHealthApiSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Health\HealthCheckTest::testHealthApiFail" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Health\HealthCheckTest::testTotalTimeApiLoadGenerator" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Health\HealthCheckTest::testApiLoadGeneratorFail" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderValidationError" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test TravelException&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithException with data set &quot;test Generic Exception&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithPastReturnDate" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithDifferentValidStatus" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderCreateTest::testCreateTravelOrderWithoutAuthentication" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testStructureResponseTravelOrders" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersWithSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetAllTravelOrdersFilterStatus" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders empty&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page 50 current page 2&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testPaginateTravelOrders with data set &quot;list travel orders multiple itens, per_page -7 current page -3&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderById" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test TravelException&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderWithException with data set &quot;test Throwable&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdEntityNotFound" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test TravelException&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testGetTravelOrderByIdWithException with data set &quot;test Throwable&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testStatusHasManyTravelOrders" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderRetrieveTest::testTravelOrderBelongsToOrderStatus" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithTravelException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderStatusTest::testShowTravelStatusOrderWithGenericException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusSuccess" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusValidationError" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test TravelException&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithException with data set &quot;test Generic Exception&quot;" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\Feature\Travel\TravelOrderUpdateStatusTest::testUpdateTravelOrderStatusWithoutAuthentication" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="1764" comments="214" code="1550" executable="401" executed="390" percent="97.26"/>
+        <methods count="96" tested="92" percent="95.83"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="35" tested="31" percent="88.57"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <directory name="Exceptions">
+        <totals>
+          <lines total="84" comments="21" code="63" executable="7" executed="6" percent="85.71"/>
+          <methods count="5" tested="4" percent="80.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="2" tested="1" percent="50.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="Handler.php" href="Exceptions/Handler.php.xml">
+          <totals>
+            <lines total="61" comments="21" code="40" executable="4" executed="3" percent="75.00"/>
+            <methods count="3" tested="2" percent="66.67"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="TravelException.php" href="Exceptions/TravelException.php.xml">
+          <totals>
+            <lines total="23" comments="0" code="23" executable="3" executed="3" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Helpers">
+        <totals>
+          <lines total="40" comments="12" code="28" executable="11" executed="11" percent="100.00"/>
+          <methods count="2" tested="2" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="ApiResponse.php" href="Helpers/ApiResponse.php.xml">
+          <totals>
+            <lines total="40" comments="12" code="28" executable="11" executed="11" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Http">
+        <totals>
+          <lines total="646" comments="76" code="570" executable="149" executed="141" percent="94.63"/>
+          <methods count="28" tested="26" percent="92.86"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="11" tested="9" percent="81.82"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Controllers">
+          <totals>
+            <lines total="258" comments="1" code="257" executable="110" executed="110" percent="100.00"/>
+            <methods count="14" tested="14" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="3" tested="3" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Api">
+            <totals>
+              <lines total="128" comments="1" code="127" executable="52" executed="52" percent="100.00"/>
+              <methods count="8" tested="8" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <directory name="Auth">
+              <totals>
+                <lines total="79" comments="0" code="79" executable="32" executed="32" percent="100.00"/>
+                <methods count="5" tested="5" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+              <file name="AuthController.php" href="Http/Controllers/Api/Auth/AuthController.php.xml">
+                <totals>
+                  <lines total="79" comments="0" code="79" executable="32" executed="32" percent="100.00"/>
+                  <methods count="5" tested="5" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+            </directory>
+            <directory name="Health">
+              <totals>
+                <lines total="49" comments="1" code="48" executable="20" executed="20" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+              <file name="HealthController.php" href="Http/Controllers/Api/Health/HealthController.php.xml">
+                <totals>
+                  <lines total="49" comments="1" code="48" executable="20" executed="20" percent="100.00"/>
+                  <methods count="3" tested="3" percent="100.00"/>
+                  <functions count="0" tested="0" percent="0"/>
+                  <classes count="1" tested="1" percent="100.00"/>
+                  <traits count="0" tested="0" percent="0"/>
+                </totals>
+              </file>
+            </directory>
+          </directory>
+          <directory name="Travel">
+            <totals>
+              <lines total="114" comments="0" code="114" executable="58" executed="58" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="TravelOrderController.php" href="Http/Controllers/Travel/TravelOrderController.php.xml">
+              <totals>
+                <lines total="114" comments="0" code="114" executable="58" executed="58" percent="100.00"/>
+                <methods count="6" tested="6" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <file name="Controller.php" href="Http/Controllers/Controller.php.xml">
+            <totals>
+              <lines total="16" comments="0" code="16" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Middleware">
+          <totals>
+            <lines total="202" comments="54" code="148" executable="10" executed="2" percent="20.00"/>
+            <methods count="3" tested="1" percent="33.33"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="3" tested="1" percent="33.33"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="Authenticate.php" href="Http/Middleware/Authenticate.php.xml">
+            <totals>
+              <lines total="22" comments="6" code="16" executable="2" executed="2" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="EncryptCookies.php" href="Http/Middleware/EncryptCookies.php.xml">
+            <totals>
+              <lines total="18" comments="5" code="13" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="PreventRequestsDuringMaintenance.php" href="Http/Middleware/PreventRequestsDuringMaintenance.php.xml">
+            <totals>
+              <lines total="18" comments="5" code="13" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="RedirectIfAuthenticated.php" href="Http/Middleware/RedirectIfAuthenticated.php.xml">
+            <totals>
+              <lines total="33" comments="8" code="25" executable="5" executed="0" percent="0.00"/>
+              <methods count="1" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TrimStrings.php" href="Http/Middleware/TrimStrings.php.xml">
+            <totals>
+              <lines total="20" comments="5" code="15" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TrustHosts.php" href="Http/Middleware/TrustHosts.php.xml">
+            <totals>
+              <lines total="21" comments="5" code="16" executable="3" executed="0" percent="0.00"/>
+              <methods count="1" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TrustProxies.php" href="Http/Middleware/TrustProxies.php.xml">
+            <totals>
+              <lines total="29" comments="10" code="19" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="ValidateSignature.php" href="Http/Middleware/ValidateSignature.php.xml">
+            <totals>
+              <lines total="23" comments="5" code="18" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="VerifyCsrfToken.php" href="Http/Middleware/VerifyCsrfToken.php.xml">
+            <totals>
+              <lines total="18" comments="5" code="13" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Requests">
+          <totals>
+            <lines total="118" comments="0" code="118" executable="29" executed="29" percent="100.00"/>
+            <methods count="11" tested="11" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="5" tested="5" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <directory name="Auth">
+            <totals>
+              <lines total="45" comments="0" code="45" executable="11" executed="11" percent="100.00"/>
+              <methods count="4" tested="4" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="LoginUserRequest.php" href="Http/Requests/Auth/LoginUserRequest.php.xml">
+              <totals>
+                <lines total="22" comments="0" code="22" executable="5" executed="5" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="UserCreateRequest.php" href="Http/Requests/Auth/UserCreateRequest.php.xml">
+              <totals>
+                <lines total="23" comments="0" code="23" executable="6" executed="6" percent="100.00"/>
+                <methods count="2" tested="2" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <directory name="Travel">
+            <totals>
+              <lines total="55" comments="0" code="55" executable="14" executed="14" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="2" tested="2" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+            <file name="CreateTravelOrderRequest.php" href="Http/Requests/Travel/CreateTravelOrderRequest.php.xml">
+              <totals>
+                <lines total="30" comments="0" code="30" executable="9" executed="9" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+            <file name="UpdateTravelOrderStatusRequest.php" href="Http/Requests/Travel/UpdateTravelOrderStatusRequest.php.xml">
+              <totals>
+                <lines total="25" comments="0" code="25" executable="5" executed="5" percent="100.00"/>
+                <methods count="3" tested="3" percent="100.00"/>
+                <functions count="0" tested="0" percent="0"/>
+                <classes count="1" tested="1" percent="100.00"/>
+                <traits count="0" tested="0" percent="0"/>
+              </totals>
+            </file>
+          </directory>
+          <file name="BaseRequest.php" href="Http/Requests/BaseRequest.php.xml">
+            <totals>
+              <lines total="18" comments="0" code="18" executable="4" executed="4" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <file name="Kernel.php" href="Http/Kernel.php.xml">
+          <totals>
+            <lines total="68" comments="21" code="47" executable="0" executed="0" percent="0"/>
+            <methods count="0" tested="0" percent="0"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="0" tested="0" percent="0"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Models">
+        <totals>
+          <lines total="105" comments="16" code="89" executable="6" executed="6" percent="100.00"/>
+          <methods count="4" tested="4" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="3" tested="3" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Travel">
+          <totals>
+            <lines total="43" comments="0" code="43" executable="2" executed="2" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="OrderStatus.php" href="Models/Travel/OrderStatus.php.xml">
+            <totals>
+              <lines total="18" comments="0" code="18" executable="1" executed="1" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TravelOrder.php" href="Models/Travel/TravelOrder.php.xml">
+            <totals>
+              <lines total="25" comments="0" code="25" executable="1" executed="1" percent="100.00"/>
+              <methods count="1" tested="1" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <file name="User.php" href="Models/User.php.xml">
+          <totals>
+            <lines total="62" comments="16" code="46" executable="4" executed="4" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Providers">
+        <totals>
+          <lines total="244" comments="88" code="156" executable="24" executed="22" percent="91.67"/>
+          <methods count="12" tested="11" percent="91.67"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="7" tested="6" percent="85.71"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <file name="AppServiceProvider.php" href="Providers/AppServiceProvider.php.xml">
+          <totals>
+            <lines total="31" comments="11" code="20" executable="4" executed="4" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="AuthServiceProvider.php" href="Providers/AuthServiceProvider.php.xml">
+          <totals>
+            <lines total="31" comments="12" code="19" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="BroadcastServiceProvider.php" href="Providers/BroadcastServiceProvider.php.xml">
+          <totals>
+            <lines total="22" comments="5" code="17" executable="2" executed="0" percent="0.00"/>
+            <methods count="1" tested="0" percent="0.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="0" percent="0.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="EventServiceProvider.php" href="Providers/EventServiceProvider.php.xml">
+          <totals>
+            <lines total="43" comments="16" code="27" executable="2" executed="2" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RepositoryServiceProvider.php" href="Providers/RepositoryServiceProvider.php.xml">
+          <totals>
+            <lines total="31" comments="11" code="20" executable="4" executed="4" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="RouteServiceProvider.php" href="Providers/RouteServiceProvider.php.xml">
+          <totals>
+            <lines total="50" comments="17" code="33" executable="9" executed="9" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+        <file name="SqliteTestServiceProvider.php" href="Providers/SqliteTestServiceProvider.php.xml">
+          <totals>
+            <lines total="36" comments="16" code="20" executable="2" executed="2" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Repositories">
+        <totals>
+          <lines total="157" comments="0" code="157" executable="33" executed="33" percent="100.00"/>
+          <methods count="10" tested="10" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="4" tested="4" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Travel">
+          <totals>
+            <lines total="107" comments="0" code="107" executable="29" executed="29" percent="100.00"/>
+            <methods count="7" tested="7" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="IOrderStatusRepository.php" href="Repositories/Travel/IOrderStatusRepository.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="ITravelOrderRepository.php" href="Repositories/Travel/ITravelOrderRepository.php.xml">
+            <totals>
+              <lines total="16" comments="0" code="16" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="OrderStatusRepositoryEloquent.php" href="Repositories/Travel/OrderStatusRepositoryEloquent.php.xml">
+            <totals>
+              <lines total="22" comments="0" code="22" executable="4" executed="4" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TravelOrderRepositoryEloquent.php" href="Repositories/Travel/TravelOrderRepositoryEloquent.php.xml">
+            <totals>
+              <lines total="58" comments="0" code="58" executable="25" executed="25" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="User">
+          <totals>
+            <lines total="34" comments="0" code="34" executable="3" executed="3" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="IUserRepository.php" href="Repositories/User/IUserRepository.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="UserRepositoryEloquent.php" href="Repositories/User/UserRepositoryEloquent.php.xml">
+            <totals>
+              <lines total="23" comments="0" code="23" executable="3" executed="3" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <file name="Repository.php" href="Repositories/Repository.php.xml">
+          <totals>
+            <lines total="16" comments="0" code="16" executable="1" executed="1" percent="100.00"/>
+            <methods count="1" tested="1" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+        </file>
+      </directory>
+      <directory name="Services">
+        <totals>
+          <lines total="219" comments="1" code="218" executable="66" executed="66" percent="100.00"/>
+          <methods count="16" tested="16" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="4" tested="4" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Auth">
+          <totals>
+            <lines total="79" comments="0" code="79" executable="25" executed="25" percent="100.00"/>
+            <methods count="5" tested="5" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="AuthService.php" href="Services/Auth/AuthService.php.xml">
+            <totals>
+              <lines total="63" comments="0" code="63" executable="25" executed="25" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="IAuthService.php" href="Services/Auth/IAuthService.php.xml">
+            <totals>
+              <lines total="16" comments="0" code="16" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Health">
+          <totals>
+            <lines total="31" comments="1" code="30" executable="12" executed="12" percent="100.00"/>
+            <methods count="2" tested="2" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="HealthApi.php" href="Services/Health/HealthApi.php.xml">
+            <totals>
+              <lines total="31" comments="1" code="30" executable="12" executed="12" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Travel">
+          <totals>
+            <lines total="109" comments="0" code="109" executable="29" executed="29" percent="100.00"/>
+            <methods count="9" tested="9" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="IOrderStatusService.php" href="Services/Travel/IOrderStatusService.php.xml">
+            <totals>
+              <lines total="11" comments="0" code="11" executable="0" executed="0" percent="0"/>
+              <methods count="0" tested="0" percent="0"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="0" tested="0" percent="0"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="OrderStatusService.php" href="Services/Travel/OrderStatusService.php.xml">
+            <totals>
+              <lines total="21" comments="0" code="21" executable="2" executed="2" percent="100.00"/>
+              <methods count="2" tested="2" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="TravelOrderService.php" href="Services/Travel/TravelOrderService.php.xml">
+            <totals>
+              <lines total="77" comments="0" code="77" executable="27" executed="27" percent="100.00"/>
+              <methods count="7" tested="7" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+      </directory>
+      <directory name="ValueObject">
+        <totals>
+          <lines total="269" comments="0" code="269" executable="105" executed="105" percent="100.00"/>
+          <methods count="19" tested="19" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="3" tested="3" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+        <directory name="Auth">
+          <totals>
+            <lines total="160" comments="0" code="160" executable="60" executed="60" percent="100.00"/>
+            <methods count="11" tested="11" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="2" tested="2" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="UserCreateVO.php" href="ValueObject/Auth/UserCreateVO.php.xml">
+            <totals>
+              <lines total="92" comments="0" code="92" executable="35" executed="35" percent="100.00"/>
+              <methods count="6" tested="6" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+          <file name="UserLoginVO.php" href="ValueObject/Auth/UserLoginVO.php.xml">
+            <totals>
+              <lines total="68" comments="0" code="68" executable="25" executed="25" percent="100.00"/>
+              <methods count="5" tested="5" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+        <directory name="Travel">
+          <totals>
+            <lines total="109" comments="0" code="109" executable="45" executed="45" percent="100.00"/>
+            <methods count="8" tested="8" percent="100.00"/>
+            <functions count="0" tested="0" percent="0"/>
+            <classes count="1" tested="1" percent="100.00"/>
+            <traits count="0" tested="0" percent="0"/>
+          </totals>
+          <file name="TravelOrderCreateVO.php" href="ValueObject/Travel/TravelOrderCreateVO.php.xml">
+            <totals>
+              <lines total="109" comments="0" code="109" executable="45" executed="45" percent="100.00"/>
+              <methods count="8" tested="8" percent="100.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="1" percent="100.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
+        </directory>
+      </directory>
+    </directory>
+  </project>
+</phpunit>
