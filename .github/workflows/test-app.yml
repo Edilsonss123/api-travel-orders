@@ -130,8 +130,13 @@ jobs:
           name: coverage-and-infection-tests
           path: api-travel-orders/tests/result
 
+      - name: Prepare files for GitHub Pages
+        run: |
+          mkdir -p docs
+          cp -r api-travel-orders/tests/result/* docs/
+          
       - name: Publish Test Results to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./api-travel-orders/tests/result
+          publish_dir: ./docs
