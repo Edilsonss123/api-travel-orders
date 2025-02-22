@@ -16,6 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      
+      - name: Download test results
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-and-infection-tests
+          path: docs
+          
       - name: Convert Markdown to GitHub Pages
         uses: wranders/markdown-to-pages-action@v1
         with:
@@ -25,12 +32,6 @@ jobs:
           out_path: docs
           out_path_not_empty: true
           custom_css: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css
-
-      - name: Download test results
-        uses: actions/download-artifact@v4
-        with:
-          name: coverage-and-infection-tests
-          path: docs
 
       - name: List docs directory (after download)
         run: ls -R docs
