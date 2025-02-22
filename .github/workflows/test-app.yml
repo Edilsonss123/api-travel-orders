@@ -124,6 +124,7 @@ jobs:
         run: php artisan test:coverage --env=testing
 
       - name: Set permissions for Infection
+        working-directory: api-travel-orders
         run: chmod +x vendor/bin/infection
         
       - name: Execute tests Infection
