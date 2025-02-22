@@ -42,7 +42,7 @@ class ExecTestWithMutationCoverageCommand extends Command
         }
 
         $this->info('Executando os testes de mutação...');
-        $command = 'vendor/bin/infection --env=testing --coverage=tests/result/mutation/coverage-xml --configuration=infection.json5 --threads=4';
+        $command = 'vendor/bin/infection --coverage=tests/result/mutation/coverage-xml --configuration=infection.json5 --threads=4';
         passthru($command, $exitCode);
         if ($exitCode !== 0) {
             $this->error('Erro ao rodar os testes de mutação. Execução interrompida.');
