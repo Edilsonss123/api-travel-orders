@@ -14,6 +14,7 @@ class HealthController extends Controller
     public function __construct(HealthApi $healthApi) {
         $this->healthApi = $healthApi;
     }
+    
     public function getStatusApi(): JsonResponse
     {
         try {
