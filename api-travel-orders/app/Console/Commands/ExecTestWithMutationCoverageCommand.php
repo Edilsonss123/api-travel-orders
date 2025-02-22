@@ -31,14 +31,14 @@ class ExecTestWithMutationCoverageCommand extends Command
         passthru('php artisan test --env=testing --coverage --coverage-xml=tests/result/mutation/coverage-xml', $exitCode);
         if ($exitCode !== 0) {
             $this->error('Erro ao rodar os testes com cobertura. Execução interrompida.');
-            return;
+            exit(1);
         }
 
         $this->info('Gerando test-results.junit...');
         passthru('php artisan test --env=testing --log-junit=tests/result/mutation/coverage-xml/coverage-xmltest-results.junit.xml', $exitCode);
         if ($exitCode !== 0) {
             $this->error('Erro ao gerar o arquivo JUnit. Execução interrompida.');
-            return;
+            exit(1);
         }
 
         $this->info('Executando os testes de mutação...');
@@ -46,7 +46,7 @@ class ExecTestWithMutationCoverageCommand extends Command
         passthru($command, $exitCode);
         if ($exitCode !== 0) {
             $this->error('Erro ao rodar os testes de mutação. Execução interrompida.');
-            return;
+            exit(1);
         }
     }
     
