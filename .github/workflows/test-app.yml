@@ -109,6 +109,12 @@ jobs:
           echo "xdebug.client_host=127.0.0.1" | sudo tee -a $XDEBUG_INI
 
           php -m | grep xdebug
+      - name: Execute tests Coverage
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        working-directory: api-travel-orders
+        run: php artisan test:coverage --env=testing
 
       - name: Execute tests Coverage
         env:
