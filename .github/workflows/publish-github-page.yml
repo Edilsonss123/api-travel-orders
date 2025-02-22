@@ -35,16 +35,6 @@ jobs:
           sudo apt-get install -y pandoc  # Instalar pandoc se necessário
           pandoc docs/readme.md -o docs/index.html  # Converter README.md em HTML
 
-      - name: Copy Mutation Report
-        run: |
-          mkdir -p docs/mutation
-          cp -r api-travel-orders/tests/result/mutation/* docs/mutation/
-
-      - name: Copy Coverage Report
-        run: |
-          mkdir -p docs/coverage
-          cp -r api-travel-orders/tests/result/coverage/* docs/coverage/
-
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
