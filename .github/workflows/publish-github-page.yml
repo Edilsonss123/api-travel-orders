@@ -1,0 +1,61 @@
+name: Publish to GitHub Pages
+
+on:
+  workflow_run:
+    workflows: ["test-app"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download test results
+        uses: actions/download-artifact@v4
+        with:
+          name: coverage-and-infection-tests
+          path: docs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Copy README file
+        run: |
+          cp README.md docs/readme.md  # Copiar README para docs/
+          
+      - name: Convert README.md to index.html
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc  # Instalar pandoc se necessário
+          pandoc docs/readme.md -o docs/index.html  # Converter README.md em HTML
+
+      - name: Copy Mutation Report
+        run: |
+          mkdir -p docs/mutation
+          cp -r api-travel-orders/tests/result/mutation/* docs/mutation/
+
+      - name: Copy Coverage Report
+        run: |
+          mkdir -p docs/coverage
+          cp -r api-travel-orders/tests/result/coverage/* docs/coverage/
+
+      - name: Upload artifact to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Output Deployment URL
+        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
