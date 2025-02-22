@@ -25,21 +25,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # - name: Set README.md as index
-      #   run: cp README.md docs/readme.md
-          
-      # - name: Convert README.md to index.html
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y pandoc  # Instalar pandoc se necessário
-      #     pandoc docs/readme.md -o docs/index.html --from markdown --to html5 --standalone --css=https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css
-      
       - name: Convert Markdown to GitHub Pages
         uses: wranders/markdown-to-pages-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             README.md
+
+      - name: List docs directory (after conversion)
+        run: ls -R docs  # Para inspecionar os arquivos gerados
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
