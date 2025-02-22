@@ -21,7 +21,9 @@ jobs:
 
       - name: Install Dependencies
         working-directory: ./api-travel-orders
-        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: |
+          composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+          composer require --dev infection/infection
 
       - name: Generate key
         working-directory: ./api-travel-orders
