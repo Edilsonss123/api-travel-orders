@@ -4,23 +4,27 @@
 A Travel Order API permite gerenciar e controlar solicitações de viagem, com funcionalidades para listar, criar, recuperar e atualizar informações das ordens de viagem.
 
 ## Requisitos
-- [Docker](https://docs.docker.com/compose/install/) e [Docker Composer](https://docs.docker.com/compose/install/standalone/)
 
+- [Docker](https://docs.docker.com/compose/install/) e [Docker Composer](https://docs.docker.com/compose/install/standalone/)
 
 ## Rodando localmente
 
-Clone o projeto
+### Clone o projeto
 
 ```bash
 git clone https://github.com/Edilsonss123/travel-order.git travel-order
 ```
 
-Entre no diretório do projeto
+### Entre no diretório do projeto
+
 ```bash
 cd travel-order
 ```
 
-Entre no diretório do projeto ``api-travel-orders`` e configure o arquivo ``.env``, utilize o ``.env.example`` como modelo, substituindo a configuração de conexão com o banco de dadoo
+### Configure o arquivo `.env`
+
+Entre no diretório `api-travel-orders` e configure o arquivo `.env`, utilizando o `.env.example` como modelo, substituindo a configuração de conexão com o banco de dados:
+
 ```bash
 cd travel-order/api-travel-orders
 
@@ -32,22 +36,25 @@ DB_USERNAME=travel-user
 DB_PASSWORD="8teste0rd&"
 ```
 
-Antes de iniciar o container, será preciso tornar o script de inicialização da aplicação executável
+### Torne o script de inicialização executável
+
+Antes de iniciar o container, será necessário tornar o script de inicialização da aplicação executável:
 
 ```bash
 chmod +x travel-order/data/api/entrypoint.sh
 ```
-O bash executa os comandos abaixo, ele possui um sleep para garantir que o banco de dados já estará disponível para utilização.
+
+O bash executa os comandos abaixo, com um `sleep` para garantir que o banco de dados já estará disponível:
+
 ```bash
 # Rodar composer install
 echo "Instalando dependências do Composer..."
 composer install --no-interaction --prefer-dist
 
-# Gerar a chave JWT e APP_KEY(se necessário)
+# Gerar a chave JWT e APP_KEY (se necessário)
 echo "Gerando chave JWT & APP_KEY..."
 php artisan key:generate --no-interaction
 php artisan jwt:secret --no-interaction
-
 
 # Rodar as migrations do banco de dados
 echo "Rodando as migrations..."
@@ -63,83 +70,118 @@ php artisan config:clear
 php artisan route:clear
 php artisan view:clear
 
-# Iniciar o servidor Laravel:
+# Iniciar o servidor Laravel
 echo "Iniciando o servidor Laravel..."
 php artisan serve --host 0.0.0.0 --port 8000
 ```
 
-Inicie o contêiner com o docker, nesse primeiro momento vai demorar um pouco quando executado pela primeira vez.
+### Inicie o contêiner com o Docker
+
+No primeiro momento, vai demorar um pouco quando executado pela primeira vez:
 
 ```bash
 docker-compose up -d
 ```
-Para executar os testes será necessário executar de dentro do container, segue o passo a passo
+
+### Executando os testes
+
+Para executar os testes, será necessário estar dentro do container. Siga o passo a passo:
+
 ```bash
 docker exec -it api-travel-orders /bin/bash
 cd api-travel-orders
 php artisan test ou ./vendor/bin/phpunit
 ```
- - Teste Unitário
+
+#### Tipos de testes
+
+- **Teste Unitário**:
     ```bash
     php artisan test --filter Unit
     ```
-- Teste Integração
+
+- **Teste de Integração**:
     ```bash
-    php artisan test ou ./vendor/bin/phpunit
+    php artisan test --filter Feature
     ```
- - Gerar cobertura de teste
+
+- **Gerar cobertura de teste**:
     ```bash
     php artisan test:coverage
     ```
- - Gerar cobertura de teste de mutação
+
+- **Gerar cobertura de teste de mutação**:
     ```bash
     php artisan test:mutation
     ```
-Para acessar o resultado da cobertura de teste teste de mutação acesse o localmente os resultados servido pelo Nginx
- - [Coverage](http://localhost:2052/) - http://localhost:2052/
- - [Mutation](http://localhost:2052/mutation/) - http://localhost:2052/mutation/
 
-Ao iniciar o container as depências, migrations e seeders serão invocadas atraves do script bash, que tem como ultima ação subir o a aplicação na porta 8000 do container, que é mapeada para a rede host na porta 2050.
+### Acessando os resultados
 
+Para acessar os resultados da cobertura de teste e teste de mutação, você pode consultar os relatórios servidos pelo Nginx localmente:
 
-Acessando o serviço de api
+- [Coverage](http://localhost:2052/)
+- [Mutation](http://localhost:2052/mutation/)
 
-```
-Acesse a api através da porta 2050 do localhost: https://localhost:2050/
+### Publicação de resultados no GitHub Pages
+
+Agora, os resultados dos testes de mutação e cobertura são publicados automaticamente no GitHub Pages. Acesse os relatórios diretamente nas seguintes URLs:
+
+- [Cobertura de Teste](https://edilsonss123.github.io/api-travel-orders/coverage/)
+- [Cobertura de Mutação](https://edilsonss123.github.io/api-travel-orders/mutation/)
+
+Ao iniciar o container, as dependências, migrations e seeders serão invocados automaticamente através do script bash, que tem como última ação subir a aplicação na porta 8000 do container, mapeada para a rede host na porta 2050.
+
+### Acessando o serviço da API
+
+Acesse a API através da porta 2050 do localhost:
+
+```bash
+https://localhost:2050/
 ```
 
 ## Stack utilizada
-- **Ambiente desenvolvimento:** Docker
-- **Abordagem arquitetônica:** Microsserviço
-- **Back-end:** Laravel
-    - Inversão de dependência 
-    - Repositório para acesso a camada de dados
-    - Revisionable para revisão de alteração através dos logs gravados
-- **Testes:** 
+
+- **Ambiente de desenvolvimento**: Docker
+- **Abordagem arquitetônica**: Microsserviço
+- **Back-end**: Laravel
+    - Inversão de dependência
+    - Repositório para acesso à camada de dados
+    - Revisionable para revisão de alterações através dos logs gravados
+- **Testes**:
     - Testes unitários com PHPUnit
-    - Testes integração com PHPUnit
-    - Testes mutação com Infection
+    - Testes de integração com PHPUnit
+    - Testes de mutação com Infection
     - Relatório de cobertura de testes - Coverage
     - Relatório de cobertura de mutação - Infection
-- **Autenticação:** JWT
-- **Banco De Dados:** MySQL
+- **Autenticação**: JWT
+- **Banco de Dados**: MySQL
 
+## Funcionalidades da API
 
-## Funcionalidades API
- - Viagem:
-    - Lista de status
-    - Lista de solicitações de viagem
-    - Lista de uma Solicitação
-    - Solicitação de uma nova viagem
-    - Atualização de status de uma solicitação de viagem
- - Autenticação:
-    - Criação de usuário
-    - Geração do token de acesso do usuário
-    - Invalidação do token de acesso do usuário
- - Health
-    - Verificação de status API
-    - Load generate, teste de carga 
-Usuario padrão:
- - email: travel-order-test-2024@gmail.com
- - senha: travel-order-test-2024
-Para acesso a documentação completa da API consulte a [documentação Postman](https://documenter.getpostman.com/view/5807678/2sAY52dKUX)
+### Viagem:
+
+- Lista de status
+- Lista de solicitações de viagem
+- Lista de uma solicitação
+- Solicitação de uma nova viagem
+- Atualização de status de uma solicitação de viagem
+
+### Autenticação:
+
+- Criação de usuário
+- Geração do token de acesso do usuário
+- Invalidação do token de acesso do usuário
+
+### Health:
+
+- Verificação de status da API
+- Teste de carga (load generate)
+
+### Usuário padrão:
+
+- **Email**: `travel-order-test-2024@gmail.com`
+- **Senha**: `travel-order-test-2024`
+
+### Documentação da API
+
+Para acessar a documentação completa da API, consulte a [documentação Postman](https://documenter.getpostman.com/view/5807678/2sAY52dKUX).

@@ -21,6 +21,7 @@ class HealthCheckTest extends TestCase
         $this->assertEquals(["message", "success", "result"], array_keys($response->json()));
         $this->assertEquals(["server", "status", "pod", "ip"], array_keys($response->json()["result"]));
     }
+    
     public function testHealthApiFail(): void
     {   
         $mockHealthApi = Mockery::mock(HealthApi::class)->makePartial();
