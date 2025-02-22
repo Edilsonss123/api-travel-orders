@@ -32,6 +32,7 @@ jobs:
           files: |
             README.md
           out_path: docs
+          out_path_not_empty: true
           custom_css: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css  # Aplica o CSS desejado
 
       - name: List docs directory (after conversion)
@@ -40,7 +41,7 @@ jobs:
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs  # O diretório 'docs' agora deve conter o index.html
+          path: docs
 
       - name: Deploy to GitHub Pages
         id: deployment
