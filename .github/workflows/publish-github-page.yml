@@ -1,8 +1,8 @@
 name: publish-github-page
 
 on:
-    workflow_call:
-  
+  workflow_call:
+
 jobs:
   publish-github-page:
     runs-on: ubuntu-latest
@@ -25,15 +25,18 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Copy README.md to docs
+        run: cp README.md docs/README.md
+
       - name: Convert Markdown to GitHub Pages
         uses: wranders/markdown-to-pages-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            README.md
+            docs/README.md
 
       - name: List docs directory (after conversion)
-        run: ls -R docs  # Para inspecionar os arquivos gerados
+        run: ls -R ../
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
