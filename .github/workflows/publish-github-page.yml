@@ -25,23 +25,22 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Copy README.md to docs
-        run: cp README.md docs/README.md
-
       - name: Convert Markdown to GitHub Pages
         uses: wranders/markdown-to-pages-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            docs/README.md
+            README.md
+          out_path: docs
+          custom_css: https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css  # Aplica o CSS desejado
 
       - name: List docs directory (after conversion)
-        run: ls -R ../
+        run: ls -R
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: docs  # O diretório 'docs' agora deve conter o index.html
 
       - name: Deploy to GitHub Pages
         id: deployment
