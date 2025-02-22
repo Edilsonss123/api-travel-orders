@@ -25,16 +25,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Copy README file
-        run: |
-          cp README.md docs/readme.md  # Copiar README para docs/
+      - name: Set README.md as index
+        run: cp README.md docs/index.md
           
-      - name: Convert README.md to index.html
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc  # Instalar pandoc se necessário
-          pandoc docs/readme.md -o docs/index.html  # Converter README.md em HTML
-
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
