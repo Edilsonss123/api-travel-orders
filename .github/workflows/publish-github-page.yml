@@ -1,13 +1,10 @@
-name: Publish to GitHub Pages
+name: publish-github-page
 
 on:
-  workflow_run:
-    workflows: ["test-app"]
-    types:
-      - completed
-
+    workflow_call:
+  
 jobs:
-  deploy:
+  publish-github-page:
     runs-on: ubuntu-latest
     permissions:
       contents: read
