@@ -47,6 +47,11 @@ jobs:
     uses: ./.github/workflows/test-app.yml
     secrets: inherit
 
+  publish-github-page:
+    needs: test-app
+    uses: ./.github/workflows/publish-github-page.yml
+    secrets: inherit
+
   auto-increment-tag-app:
     needs: [build, test-app]
     uses: ./.github/workflows/auto-increment-tag-app.yml
