@@ -100,6 +100,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo composer install --no-progress --prefer-dist
+          sudo chmod +x vendor/bin/infection
           sudo apt-get install -y php-xdebug
             
           XDEBUG_INI=/etc/php/$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')/cli/conf.d/20-xdebug.ini
