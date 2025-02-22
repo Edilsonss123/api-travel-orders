@@ -40,6 +40,7 @@ jobs:
           files: |
             README.md
           out_path: docs
+          out_path_not_empty: true
           custom_css: docs/github-markdown-light.min.css  # Agora referencia o CSS baixado
 
       # Passo 5: Listar o diretório docs após a conversão
