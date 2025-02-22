@@ -161,9 +161,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Set deployment URL as output
-        run: echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
-
       - name: Output Deployment URL
         run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
         
