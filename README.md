@@ -127,9 +127,52 @@ Para acessar os resultados da cobertura de teste e teste de mutação, você pod
 Agora, os resultados dos testes de mutação e cobertura são publicados automaticamente no GitHub Pages. Acesse os relatórios diretamente nas seguintes URLs:
 
 - [Cobertura de Teste](https://edilsonss123.github.io/api-travel-orders/coverage/)
+<img src="data/imagens/coverage-dashboard.png" width="230">
 - [Cobertura de Mutação](https://edilsonss123.github.io/api-travel-orders/mutation/)
+<img src="data/imagens/mutacao-dashboard.png" width="230">
+
 
 Ao iniciar o container, as dependências, migrations e seeders serão invocados automaticamente através do script bash, que tem como última ação subir a aplicação na porta 8000 do container, mapeada para a rede host na porta 2050.
+
+# Análise de Código com SonarQube
+
+Este projeto utiliza o **SonarQube** para análise de qualidade do código. A seguir, estão as instruções para configurar e executar a análise.!
+<img src="data/imagens/sonarqube-overview.png" width="230">
+
+## Configuração do SonarQube com Docker
+
+O SonarQube e o banco de dados PostgreSQL são executados via **Docker Compose**. O arquivo `docker-compose-sonar.yml` define os serviços necessários:
+
+```yaml
+docker-compose -f docker-compose-sonar.yml up -d
+```
+
+Isso iniciará os contêineres:
+- **sonarqube**: Interface do SonarQube acessível em `http://localhost:9000`.
+- **sonarqube-db**: Banco de dados PostgreSQL para armazenar os resultados da análise.
+
+## Arquivo de Configuração: `sonar-project.properties`
+
+O arquivo `sonar-project.properties` contém as configurações do projeto para análise
+
+## Gerar artefatos analise cobertura de teste
+```bash
+php artisan test:sonar
+```
+
+## Executando a Análise com o SonarScanner
+
+Para executar a análise do código, utilize o seguinte comando com o **SonarScanner CLI**:
+
+```sh
+docker run   --rm   --network=host   -v "./api-travel-orders:/usr/src"   sonarsource/sonar-scanner-cli   -Dsonar.token={TOKEN}   -Dsonar.scanner.force-deprecated-clean=true
+```
+
+### Notas:
+- Substitua `{TOKEN}` pelo seu token de autenticação do SonarQube.
+- Certifique-se de que os contêineres do SonarQube e do banco de dados estão em execução antes de iniciar a análise.
+- O resultado da análise pode ser acessado via `http://localhost:9000`.
+
 
 ### Acessando o serviço da API
 
