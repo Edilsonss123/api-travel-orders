@@ -30,14 +30,14 @@ class ExecTestWithMutationCoverageCommand extends Command
         $exitCode = null;
         passthru('php artisan test --env=testing --coverage --coverage-xml=tests/result/mutation/coverage-xml', $exitCode);
         if ($exitCode !== 0) {
-            $this->error('Erro ao rodar os testes com cobertura. Execução interrompida.');
+            $this->error('[1] coverage-xml: Erro ao rodar os testes com cobertura. Execução interrompida.');
             exit(1);
         }
 
         $this->info('Gerando test-results.junit...');
-        passthru('php artisan test --env=testing --log-junit=tests/result/mutation/coverage-xml/coverage-xmltest-results.junit.xml', $exitCode);
+        passthru('php artisan test --env=testing --log-junit=tests/result/mutation/coverage-xml/test-results.junit.xml', $exitCode);
         if ($exitCode !== 0) {
-            $this->error('Erro ao gerar o arquivo JUnit. Execução interrompida.');
+            $this->error('[2] log-junit: Erro ao gerar o arquivo JUnit. Execução interrompida.');
             exit(1);
         }
 
@@ -45,7 +45,7 @@ class ExecTestWithMutationCoverageCommand extends Command
         $command = 'vendor/bin/infection --coverage=tests/result/mutation/coverage-xml --configuration=infection.json5 --threads=4';
         passthru($command, $exitCode);
         if ($exitCode !== 0) {
-            $this->error('Erro ao rodar os testes de mutação. Execução interrompida.');
+            $this->error('[3] infection: Erro ao rodar os testes de mutação. Execução interrompida.');
             exit(1);
         }
     }

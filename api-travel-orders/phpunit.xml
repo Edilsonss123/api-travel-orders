@@ -24,6 +24,9 @@
         </include>
         <exclude>
             <directory suffix=".php">./app/Console</directory>
+            <directory suffix=".php">./config</directory>
+            <directory suffix=".php">./database/migrations</directory>
+            <directory suffix=".php">./tests</directory>
         </exclude>
     </coverage>
 </phpunit>

@@ -26,6 +26,18 @@ class ExecTestWithCoverageCommand extends Command
     public function handle()
     {
         $this->info('Executando os testes com cobertura em HTML...');
-        passthru('php artisan test --env=testing --coverage --coverage-html=tests/result/coverage');
+        $exitCode = null;
+        passthru('php artisan test --env=testing --coverage --coverage-html=tests/result/coverage', $exitCode);
+        if ($exitCode !== 0) {
+            $this->error('[1] coverage-html: Erro ao rodar os testes com cobertura. Execução interrompida.');
+            exit(1);
+        }
+        
+        $exitCode = null;
+        passthru('php artisan test --env=testing --coverage --coverage-xml=tests/result/coverage-xml/', $exitCode);
+        if ($exitCode !== 0) {
+            $this->error('[2] coverage-xml: Erro ao rodar os testes com cobertura. Execução interrompida.');
+            exit(1);
+        }
     }
 }
