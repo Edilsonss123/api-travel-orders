@@ -127,9 +127,9 @@ Para acessar os resultados da cobertura de teste e teste de mutação, você pod
 Agora, os resultados dos testes de mutação e cobertura são publicados automaticamente no GitHub Pages. Acesse os relatórios diretamente nas seguintes URLs:
 
 - [Cobertura de Teste](https://edilsonss123.github.io/api-travel-orders/coverage/)
-<img src="data/imagens/coverage-dashboard.png" width="230">
+<img src="data/imagens/coverage-dashboard.png">
 - [Cobertura de Mutação](https://edilsonss123.github.io/api-travel-orders/mutation/)
-<img src="data/imagens/mutacao-dashboard.png" width="230">
+<img src="data/imagens/mutacao-dashboard.png">
 
 
 Ao iniciar o container, as dependências, migrations e seeders serão invocados automaticamente através do script bash, que tem como última ação subir a aplicação na porta 8000 do container, mapeada para a rede host na porta 2050.
@@ -137,7 +137,7 @@ Ao iniciar o container, as dependências, migrations e seeders serão invocados 
 # Análise de Código com SonarQube
 
 Este projeto utiliza o **SonarQube** para análise de qualidade do código. A seguir, estão as instruções para configurar e executar a análise.!
-<img src="data/imagens/sonarqube-overview.png" width="230">
+<img src="data/imagens/sonarqube-overview.png">
 
 ## Configuração do SonarQube com Docker
 
