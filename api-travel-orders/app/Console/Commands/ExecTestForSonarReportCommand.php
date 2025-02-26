@@ -29,12 +29,12 @@ class ExecTestForSonarReportCommand extends Command
         $exitCode = null;
         
 
-        passthru('php artisan test  --testsuite=Unit --log-junit=tests/result/sonar/test-results.junit.xml', $exitCode);
+        passthru('php artisan test  --testsuite=Unit --log-junit=report/tests/sonar/test-results.junit.xml', $exitCode);
         if ($exitCode !== 0) {
             $this->error('[1] coverage-clover: Executando os testes com relatorio sonarqube.');
             exit(1);
         }
-        passthru('php artisan test --coverage-clover=tests/result/sonar/clover.xml', $exitCode);
+        passthru('php artisan test --coverage-clover=report/tests/sonar/sonar.xml', $exitCode);
         if ($exitCode !== 0) {
             $this->error('[1] coverage-clover: Executando os testes com relatorio sonarqube.');
             exit(1);

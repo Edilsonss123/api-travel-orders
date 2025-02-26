@@ -136,7 +136,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-and-infection-tests
-          path: api-travel-orders/tests/result
+          path: api-travel-orders/report/tests
 
   # deploy:
   #   runs-on: ubuntu-latest

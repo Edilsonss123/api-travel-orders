@@ -37,7 +37,7 @@ services:
       ports:
         - "2052:80"
       volumes:
-        - ./api-travel-orders/tests/result:/usr/share/nginx/html
+        - ./api-travel-orders/report/tests:/usr/share/nginx/html
         - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
       restart: always
 volumes:

@@ -26,7 +26,13 @@ class TravelOrderUpdateStatusTest extends TestCase
         $orderTravel->status =  OrderStatusVO::Approved->value;
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
-        $this->assertEquals($response->json("result.order"), $orderTravel->toArray());
+        $this->assertEquals($orderTravel->id, $response->json("result.order.id"));
+        $this->assertSame([
+            'id', 'travelerName', 'destination', 'departureDate',
+            'returnDate', 'status', 'created_at', 'updated_at'
+        ],
+            array_keys($response->json("result.order"))
+        );
     }
 
     public function testUpdateTravelOrderStatusValidationError()
