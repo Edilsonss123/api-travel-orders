@@ -15,7 +15,7 @@ class TravelException extends Exception
         parent::__construct($message, $code, $previous);
     }
 
-    function getData(): array
+    public function getData(): array
     {
         return $this->data;
     }

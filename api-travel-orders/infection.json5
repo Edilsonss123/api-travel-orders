@@ -12,8 +12,8 @@
         // "excludes": []
     },
     "logs": {
-        "text": "tests/result/mutation/infection.log",
-        "html": "tests/result/mutation/index.html"
+        "text": "report/tests/mutation/infection.log",
+        "html": "report/tests/mutation/index.html"
     },
     "mutators": {
         "@default": true,
