@@ -23,9 +23,9 @@ Homestead.json
 .phpunit.result.cache
 
 # Resultado de cobertura dos testes
-api-travel-orders/report/tests
+api-travel-orders/report/*
 
-data/*.txt
+data/**/*.txt
 
 .sonarlint/
 .vscode/
