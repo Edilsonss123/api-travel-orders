@@ -32,7 +32,7 @@ class ExecTestWithCoverageCommand extends Command
             $this->error('[1] coverage-html: Erro ao rodar os testes com cobertura. Execução interrompida.');
             exit(1);
         }
-        
+
         $exitCode = null;
         passthru('php artisan test --env=testing --coverage --coverage-xml=report/tests/coverage-xml/', $exitCode);
         if ($exitCode !== 0) {

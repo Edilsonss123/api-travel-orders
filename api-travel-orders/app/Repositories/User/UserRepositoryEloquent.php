@@ -4,7 +4,6 @@ namespace App\Repositories\User;
 
 use App\Models\User;
 use App\Repositories\Repository;
-use App\Repositories\User\IUserRepository;
 use Illuminate\Database\Eloquent\Model;
 
 class UserRepositoryEloquent extends Repository implements IUserRepository
@@ -16,7 +15,6 @@ class UserRepositoryEloquent extends Repository implements IUserRepository
 
     public function create(array $data): User
     {
-        $user = User::create($data);
-        return $user;
+        return User::create($data);
     }
 }

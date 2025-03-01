@@ -121,7 +121,7 @@ class TravelOrderServiceUpdateTest extends TestCase
      * @dataProvider statusTransitionDataProvider
      */
 
-    public function testUpdateStatusThrowsExceptionWhenStatusIsUnchanged(OrderStatusVO $initialStatus, OrderStatusVO $newStatus, string $expectedExceptionMessage = null, $codeHttp=null)
+    public function testUpdateStatusThrowsExceptionWhenStatusIsUnchanged(OrderStatusVO $initialStatus, OrderStatusVO $newStatus, string $expectedExceptionMessage = null, $codeHttp = null)
     {
         $orderStatus = Mockery::mock(OrderStatus::class);
         $orderStatus->shouldReceive('getAttribute')

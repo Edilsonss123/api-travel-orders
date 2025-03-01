@@ -1,0 +1,23 @@
+- [x] listagem de status
+- [x] cadastro de usuario
+- [x] autenticação
+- [x] testes
+- [x] criar mais value object create user and create travelOrder adicionar validações nesses VO
+- [x] criar testes validando essas regras
+- [x] documentação
+- [x] falar sobre a tabela de log
+- [x] criar seed para popular o banco
+- [x] criar um usuário para padrao
+- [x] alterar os teste para funcionar com a paginacao
+- [x] subir o projeto todo do zero para anotar todos os passos
+
+
+
+- [] implementar teste de mutação - > https://infection.github.io/guide/mutators.html#Conditional-Boundaries
+- [] implementar teste de integracao
+- [] implementar teste de carga/testes de desempenho
+
+- [] implementar observabilidade
+    - utilizar prometheus com o grafana
+    - [] https://github.com/ensi-platform/laravel-prometheus
+    - [] https://github.com/artprima/prometheus-metrics-bundle

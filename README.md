@@ -134,7 +134,7 @@ Agora, os resultados dos testes de mutação e cobertura são publicados automat
 
 Ao iniciar o container, as dependências, migrations e seeders serão invocados automaticamente através do script bash, que tem como última ação subir a aplicação na porta 8000 do container, mapeada para a rede host na porta 2050.
 
-# Análise de Código com SonarQube
+## Análise de Código com SonarQube
 
 Este projeto utiliza o **SonarQube** para análise de qualidade do código. A seguir, estão as instruções para configurar e executar a análise.!
 <img src="https://raw.githubusercontent.com/Edilsonss123/api-travel-orders/master/data/imagens/sonarqube-overview.png">
@@ -165,7 +165,8 @@ php artisan test:sonar
 Para executar a análise do código, utilize o seguinte comando com o **SonarScanner CLI**:
 
 ```sh
-docker run   --rm   --network=host   -v "./api-travel-orders:/usr/src"   sonarsource/sonar-scanner-cli   -Dsonar.token={TOKEN}   -Dsonar.scanner.force-deprecated-clean=true
+export SONAR_TOKEN={SEU TOKEN}
+docker run   --rm   --network=host   -v "./api-travel-orders:/usr/src"   sonarsource/sonar-scanner-cli   -Dsonar.token={SONAR_TOKEN}   -Dsonar.scanner.force-deprecated-clean=true
 ```
 
 ### Notas:
@@ -173,6 +174,27 @@ docker run   --rm   --network=host   -v "./api-travel-orders:/usr/src"   sonarso
 - Certifique-se de que os contêineres do SonarQube e do banco de dados estão em execução antes de iniciar a análise.
 - O resultado da análise pode ser acessado via `http://localhost:9000`.
 
+
+## Pré-Commit Hook para Análise de Código
+
+Este script é um hook de pré-commit que realiza diversas verificações e correções automáticas no código antes de permitir o commit. Ele é executado toda vez que um commit é feito, garantindo que o código esteja em conformidade com as práticas de codificação e passando nos testes automatizados.
+
+**Recursos Utilizados**
+- **PHP CS Fixer** - Ferramenta de formatação de código PHP.
+- **PHPCBF (PHP Code Beautifier and Fixer)** - Ferramenta usada para corrigir o código conforme o padrão PSR-1.
+- **PHPStan** - Ferramenta de análise estática para PHP.
+- **PHPCS (PHP Code Sniffer)** - Ferramenta para garantir que o código siga padrões de codificação específicos, como PSR-1.
+- **PHPUnit** - Ferramenta para executar testes unitários automatizados no código.
+- **SonarQube** - O script envia relatórios de análise de código e cobertura de testes para o SonarQube, garantindo que os relatórios estejam atualizados e analisados na plataforma de qualidade de código.
+
+**Como Utilizar**
+- Coloque este script como um hook de pré-commit na sua configuração do Git.
+- Certifique-se de que as ferramentas necessárias (PHP CS Fixer, PHPCBF, PHPStan, PHPCS, PHPUnit, SonarQube) estão instaladas e configuradas corretamente.
+- Execute o commit normalmente. O script será invocado antes de permitir o commit.
+- Necessário configurar a variavel de ambiente ``SONAR_TOKEN`` para que o pre-commit faça o envio dos dados para o sonar
+    ```sh
+    export SONAR_TOKEN={SEU TOKEN}
+    ```
 
 ### Acessando o serviço da API
 

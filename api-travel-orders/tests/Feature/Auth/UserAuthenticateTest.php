@@ -17,7 +17,7 @@ class UserAuthenticateTest extends TestCase
     {
         parent::setUp();
     }
-    
+
     public function testUserCanAuthenticateWithValidCredentials()
     {
         $user = User::factory()->create([
@@ -53,7 +53,7 @@ class UserAuthenticateTest extends TestCase
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('login')
         ->andThrow(new TravelException("Failed Login", 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
 
         $user = User::factory()->create([
@@ -76,7 +76,7 @@ class UserAuthenticateTest extends TestCase
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('login')
         ->andThrow(new Exception(__('apiResponse.exceptionMessageError'), 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
 
         $user = User::factory()->create([
@@ -135,7 +135,7 @@ class UserAuthenticateTest extends TestCase
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('logout')
         ->andThrow(new TravelException("Logout failed", 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
 
         $response = $this->withToken($this->getAuthToken())
@@ -152,7 +152,7 @@ class UserAuthenticateTest extends TestCase
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('logout')
         ->andThrow(new Exception(__('apiResponse.exceptionMessageError'), 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
 
         $response = $this->withToken($this->getAuthToken())
@@ -167,7 +167,7 @@ class UserAuthenticateTest extends TestCase
     public function testRefreshSuccess()
     {
         $response = $this->withToken($this->getAuthToken())->postJson('/api/travel/auth/refresh');
-        
+
         $response->assertStatus(status: 200)
         ->assertJsonStructure([
             "result" => ["user", "authorization" => ['token', 'type']]

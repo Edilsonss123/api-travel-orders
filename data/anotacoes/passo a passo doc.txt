@@ -1,0 +1,29 @@
+composer-install
+php artisan genereta
+php artisan jwt:secret
+php artisan migrate
+
+exec test
+php artisan test --coverage
+
+min de 80.3% de cobertura para sucesso
+php artisan test --coverage --min=80.3
+
+#cobertura de teste
+roda a cobertura de teste e result em html
+php artisan test --coverage --coverage-html=tests/result/coverage
+
+commando criado ->  php artisan test:coverage
+
+
+#teste de mutação
+roda teste e result em xml para teste de mutação
+php artisan test --coverage --coverage-xml=tests/result/mutation/coverage-xml
+php artisan test --log-junit=tests/result/mutation/coverage-xml/coverage-xmltest-results.junit.xml
+
+roda o teste de mutação
+vendor/bin/infection --coverage=tests/result/mutation/coverage-xml
+
+commando criado ->  php artisan test:mutation
+
+

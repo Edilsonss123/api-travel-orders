@@ -5,6 +5,7 @@ namespace App\Models\Travel;
 use Illuminate\Database\Eloquent\Model;
 use Venturecraft\Revisionable\RevisionableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class TravelOrder extends Model
 {
     use RevisionableTrait;

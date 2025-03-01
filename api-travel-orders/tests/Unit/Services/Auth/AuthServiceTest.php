@@ -26,7 +26,7 @@ class AuthServiceTest extends TestCase
         $this->authService = new AuthService($this->userRepositoryMock);
     }
 
-    public function test_login_successful()
+    public function test_login_successful(): void
     {
         $userLoginVO = new UserLoginVO('test@example.com', 'password123');
         $hashPassword = "token_acess";
@@ -45,7 +45,7 @@ class AuthServiceTest extends TestCase
         $this->assertEquals('bearer', $response['authorization']['type']);
     }
 
-    public function test_login_failed()
+    public function test_login_failed(): void
     {
         $userLoginVO = new UserLoginVO('test@example.com', 'wrongpassword');
 
@@ -60,7 +60,7 @@ class AuthServiceTest extends TestCase
         $this->authService->login($userLoginVO);
     }
 
-    public function test_register_successful()
+    public function test_register_successful(): void
     {
         $userCreateVO = new UserCreateVO('Test User', 'test@example.com', '123456');
 
@@ -92,7 +92,7 @@ class AuthServiceTest extends TestCase
         $this->assertEquals($userMocker, $user);
     }
 
-    public function test_refresh()
+    public function test_refresh(): void
     {
         $hashPassword = "token_acess";
         Auth::shouldReceive('refresh')
@@ -108,7 +108,7 @@ class AuthServiceTest extends TestCase
         $this->assertEquals('bearer', $response['authorization']['type']);
     }
 
-    public function test_logout()
+    public function test_logout(): void
     {
         Auth::shouldReceive('logout')
         ->once()

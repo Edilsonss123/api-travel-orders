@@ -23,7 +23,7 @@ class UserCreateTest extends TestCase
             "password" => "teste123"
         ]);
         $response->assertStatus(200);
-        $this->assertIsArray( $response->json());
+        $this->assertIsArray($response->json());
         $this->assertEquals(["message", "success", "result"], array_keys($response->json()));
 
         $result = $response->json()["result"];
@@ -54,8 +54,8 @@ class UserCreateTest extends TestCase
             "data empty" => [
                 "data" => [],
                 "errors" => [
-                    'The name field is required.', 
-                    'The email field is required.', 
+                    'The name field is required.',
+                    'The email field is required.',
                     'The password field is required.'
                 ]
             ],
@@ -91,9 +91,9 @@ class UserCreateTest extends TestCase
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('register')
         ->andThrow(new TravelException("Erro register user", 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
-        
+
         $response = $this->postJson("/api/travel/auth/register", [
             "name" => "teste",
             "email" => "teste@test.com",
@@ -104,15 +104,15 @@ class UserCreateTest extends TestCase
             'message' => 'Erro register user'
         ]);
     }
-    
+
     public function testCreateFailsWithThrowable()
     {
         $mockAuthService = Mockery::mock(IAuthService::class)->makePartial();
         $mockAuthService->shouldReceive('register')
         ->andThrow(new Exception(__('apiResponse.exceptionMessageError'), 500));
-    
+
         $this->app->instance(IAuthService::class, $mockAuthService);
-        
+
         $response = $this->postJson("/api/travel/auth/register", [
             "name" => "teste",
             "email" => "teste@test.com",
