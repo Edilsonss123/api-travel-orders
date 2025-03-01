@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthService implements IAuthService
 {
     private IUserRepository $userRepository;
+    private IUserRepository $userRepository2;
     public function __construct(IUserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
