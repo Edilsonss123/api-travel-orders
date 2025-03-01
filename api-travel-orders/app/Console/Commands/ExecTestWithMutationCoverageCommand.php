@@ -26,7 +26,7 @@ class ExecTestWithMutationCoverageCommand extends Command
     public function handle()
     {
         $this->info('Executando os testes com cobertura em XML para mutação...');
-        
+
         $exitCode = null;
         passthru('php artisan test --env=testing --coverage --coverage-xml=report/tests/mutation/coverage-xml', $exitCode);
         if ($exitCode !== 0) {
@@ -49,5 +49,4 @@ class ExecTestWithMutationCoverageCommand extends Command
             exit(1);
         }
     }
-    
 }

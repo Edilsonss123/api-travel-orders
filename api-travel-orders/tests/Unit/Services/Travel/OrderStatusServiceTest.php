@@ -28,7 +28,7 @@ class OrderStatusServiceTest extends TestCase
 
 
         $result = $this->travelOrderService->getAll();
-        
+
         $this->assertInstanceOf(Collection::class, $result);
         $this->assertCount(2, $result);  // Verificando se a coleção tem 2 itens
         $this->assertEquals(['status1', 'status2'], $result->toArray());

@@ -1,7 +1,7 @@
 <?php
+
 namespace App\Http\Controllers\Api\Health;
 
-use App\Exceptions\TravelException;
 use App\Helpers\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Services\Health\HealthApi;
@@ -11,10 +11,11 @@ use Throwable;
 class HealthController extends Controller
 {
     private $healthApi;
-    public function __construct(HealthApi $healthApi) {
+    public function __construct(HealthApi $healthApi)
+    {
         $this->healthApi = $healthApi;
     }
-    
+
     public function getStatusApi(): JsonResponse
     {
         try {
@@ -24,9 +25,9 @@ class HealthController extends Controller
                 "status" => "healthy",
                 "pod" => $infoPod["pod"],
                 "ip" => $infoPod["ip"]
-            ], "Healthy"); 
+            ], "Healthy");
         } catch (Throwable $th) {
-            return ApiResponse::error($th->getMessage(), []); 
+            return ApiResponse::error($th->getMessage(), []);
         }
     }
 
@@ -43,8 +44,7 @@ class HealthController extends Controller
                 'message' => 'Load generator test completed.'
             ], "load-generator");
         } catch (Throwable $th) {
-            return ApiResponse::error($th->getMessage(), []); 
+            return ApiResponse::error($th->getMessage(), []);
         }
     }
-
 }

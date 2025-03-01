@@ -5,7 +5,6 @@ namespace App\Services\Auth;
 use App\Exceptions\TravelException;
 use App\Models\User;
 use App\Repositories\User\IUserRepository;
-use App\Services\Auth\IAuthService;
 use App\ValueObject\Auth\UserCreateVO;
 use App\ValueObject\Auth\UserLoginVO;
 use Illuminate\Support\Facades\Hash;
@@ -35,13 +34,11 @@ class AuthService implements IAuthService
 
     public function register(UserCreateVO $userCreateVO): User
     {
-        $user = $this->userRepository->create([
+        return $this->userRepository->create([
             'name' => $userCreateVO->name,
             'email' => $userCreateVO->email,
             'password' => Hash::make($userCreateVO->password),
         ]);
-
-        return $user;
     }
 
     public function refresh(): array

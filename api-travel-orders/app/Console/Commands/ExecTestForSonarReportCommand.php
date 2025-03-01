@@ -27,7 +27,7 @@ class ExecTestForSonarReportCommand extends Command
     {
         $this->info('Executando os testes com relatorio sonarqube...');
         $exitCode = null;
-        
+
 
         passthru('php artisan test  --testsuite=Unit --log-junit=report/tests/sonar/test-results.junit.xml', $exitCode);
         if ($exitCode !== 0) {

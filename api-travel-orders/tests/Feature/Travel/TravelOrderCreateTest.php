@@ -3,8 +3,6 @@
 namespace Tests\Feature\Travel;
 
 use App\Exceptions\TravelException;
-use App\Models\Travel\OrderStatus;
-use App\Models\Travel\TravelOrder;
 use App\Models\User;
 use App\Services\Travel\ITravelOrderService;
 use App\ValueObject\Travel\OrderStatusVO;
@@ -18,7 +16,7 @@ class TravelOrderCreateTest extends TestCase
     public function testCreateTravelOrderSuccess()
     {
         $token = $this->getAuthToken();
-        
+
         $requestData = [
             'travelerName' => 'John Doe',
             'destination' => 'New York',
@@ -49,9 +47,9 @@ class TravelOrderCreateTest extends TestCase
         ];
 
         $response = $this->withToken($token)->post('/api/travel/orders', $requestData);
-        
+
         $response->assertStatus(400);
-        $this->assertEquals( [
+        $this->assertEquals([
             "The traveler name field is required.",
             "The destination field is required.",
             "The departure date is not a valid date.",
@@ -70,7 +68,7 @@ class TravelOrderCreateTest extends TestCase
     public function testCreateTravelOrderWithException($exception, $expectedStatus, $expectedMessage)
     {
         $token = $this->getAuthToken();
-        
+
         $mockService = Mockery::mock(ITravelOrderService::class);
         $mockService->shouldReceive('create')
         ->andThrow($exception);
@@ -85,7 +83,7 @@ class TravelOrderCreateTest extends TestCase
         ];
 
         $response = $this->withToken($token)->post('/api/travel/orders', $requestData);
-        
+
         $response->assertStatus($expectedStatus);
         $response->assertJson(['success' => false, 'message' => $expectedMessage]);
     }
@@ -104,7 +102,7 @@ class TravelOrderCreateTest extends TestCase
             ],
         ];
     }
-    
+
     public function testCreateTravelOrderWithPastReturnDate()
     {
         $token = $this->getAuthToken();
@@ -118,9 +116,9 @@ class TravelOrderCreateTest extends TestCase
         ];
 
         $response = $this->withToken($token)->post('/api/travel/orders', $requestData);
-        
+
         $response->assertStatus(400);
-        $this->assertEquals(  [
+        $this->assertEquals([
             "The return date must be a date after departure date."
         ], $response->json("errors"));
     }
@@ -128,7 +126,7 @@ class TravelOrderCreateTest extends TestCase
     public function testCreateTravelOrderWithDifferentValidStatus()
     {
         $token = $this->getAuthToken();
-        
+
         $requestData = [
             'travelerName' => 'Alice Doe',
             'destination' => 'Los Angeles',
@@ -138,7 +136,7 @@ class TravelOrderCreateTest extends TestCase
         ];
 
         $response = $this->withToken($token)->post('/api/travel/orders', $requestData);
-        
+
         $response->assertStatus(201);
         $this->assertDatabaseHas('travel_orders', [
             'travelerName' => 'Alice Doe',
@@ -157,7 +155,7 @@ class TravelOrderCreateTest extends TestCase
         ];
 
         $response = $this->post('/api/travel/orders', $requestData);
-        
+
         $response->assertStatus(401);
     }
 

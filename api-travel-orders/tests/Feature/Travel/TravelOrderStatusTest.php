@@ -29,7 +29,7 @@ class TravelOrderStatusTest extends TestCase
         $this->app->instance(IOrderStatusService::class, $mockService);
 
         $response = $this->withToken($this->getAuthToken())->get('/api/travel/orders/status');
-        
+
         $response->assertStatus(500);
         $response->assertJson([
             "success" => false,
@@ -45,7 +45,7 @@ class TravelOrderStatusTest extends TestCase
         $this->app->instance(IOrderStatusService::class, $mockService);
 
         $response = $this->withToken($this->getAuthToken())->get('/api/travel/orders/status');
-        
+
         $response->assertStatus(500);
         $response->assertJson([
             "success" => false,

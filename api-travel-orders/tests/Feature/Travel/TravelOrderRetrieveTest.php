@@ -21,9 +21,9 @@ class TravelOrderRetrieveTest extends TestCase
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders");
         $result->assertStatus(200);
         $result->assertJsonStructure([
-            "message", 
-            "success", 
-            "result" => [ 
+            "message",
+            "success",
+            "result" => [
                 "orders" => [
                     "current_page",
                     "data",
@@ -54,7 +54,7 @@ class TravelOrderRetrieveTest extends TestCase
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders");
         $result->assertStatus(200);
         $result->assertJsonCount(5, "result.orders.data");
-        $this->assertEquals(5 , $result->json("result.orders.total"));
+        $this->assertEquals(5, $result->json("result.orders.total"));
     }
 
     public function testGetAllTravelOrdersFilterStatus()
@@ -63,14 +63,14 @@ class TravelOrderRetrieveTest extends TestCase
         $statusGroups = $travels->groupBy('status')->map(function ($group) {
             return $group->count();
         });
-        
+
         foreach ($statusGroups as $status => $total) {
-            $result = $this->withToken($this->getAuthToken())->json("GET","/api/travel/orders", [
+            $result = $this->withToken($this->getAuthToken())->json("GET", "/api/travel/orders", [
                 "status" => $status
             ]);
             $result->assertStatus(200);
             $result->assertJsonCount($total, "result.orders.data");
-            $this->assertEquals($total , $result->json("result.orders.total"));
+            $this->assertEquals($total, $result->json("result.orders.total"));
         }
     }
 
@@ -85,11 +85,11 @@ class TravelOrderRetrieveTest extends TestCase
         $result->assertJsonFragment($data['result']);
     }
 
-    public function testGetTravelOrderById() 
+    public function testGetTravelOrderById()
     {
         $travel = TravelOrder::factory()->create();
         $travel->refresh();
-        
+
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders/{$travel->id}");
         $result->assertStatus(200);
         $result->assertJson([
@@ -100,7 +100,7 @@ class TravelOrderRetrieveTest extends TestCase
             ]
         ]);
     }
-    
+
     public function providerGetTravelPaginate()
     {
         return [
@@ -177,7 +177,7 @@ class TravelOrderRetrieveTest extends TestCase
         $this->app->instance(ITravelOrderService::class, $mockService);
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders");
         $result->assertStatus($expectedStatus)
-        ->assertJson( [
+        ->assertJson([
             "message" => $expectedMessage,
             "success" => false,
             "errors" => []
@@ -200,11 +200,11 @@ class TravelOrderRetrieveTest extends TestCase
         ];
     }
 
-    public function testGetTravelOrderByIdEntityNotFound() 
+    public function testGetTravelOrderByIdEntityNotFound()
     {
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders/1");
         $result->assertStatus(404)
-        ->assertJson( [
+        ->assertJson([
             "message" => "Entity not found",
             "success" => false,
             "errors" => []
@@ -214,7 +214,7 @@ class TravelOrderRetrieveTest extends TestCase
     /**
      * @dataProvider providerGetAllTravelOrdersWithException
      */
-    public function testGetTravelOrderByIdWithException($exception, $expectedStatus, $expectedMessage) 
+    public function testGetTravelOrderByIdWithException($exception, $expectedStatus, $expectedMessage)
     {
         TravelOrder::factory()->create();
         $mockService = Mockery::mock(ITravelOrderService::class);
@@ -224,7 +224,7 @@ class TravelOrderRetrieveTest extends TestCase
 
         $result = $this->withToken($this->getAuthToken())->get("/api/travel/orders/1");
         $result->assertStatus($expectedStatus)
-        ->assertJson( [
+        ->assertJson([
             "message" => $expectedMessage,
             "success" => false,
             "errors" => []
@@ -232,7 +232,7 @@ class TravelOrderRetrieveTest extends TestCase
     }
     public function testStatusHasManyTravelOrders()
     {
-        $status = OrderStatus::find(OrderStatusVO::Approved->value);
+        $status = (new OrderStatus())->find(OrderStatusVO::Approved->value);
         $orders = TravelOrder::factory()->count(3)->create([
             "status" => $status->id
         ]);
@@ -243,7 +243,7 @@ class TravelOrderRetrieveTest extends TestCase
 
     public function testTravelOrderBelongsToOrderStatus()
     {
-        $status = OrderStatus::find(OrderStatusVO::Requested->value);
+        $status = (new OrderStatus())->find(OrderStatusVO::Requested->value);
         $order = TravelOrder::factory()->create([
             'status' => $status->id
         ]);
@@ -251,7 +251,7 @@ class TravelOrderRetrieveTest extends TestCase
         $this->assertInstanceOf(OrderStatus::class, $order->travelStatus);
         $this->assertEquals($status->id, $order->travelStatus->id);
     }
-    
+
     private function getAuthToken()
     {
         $password = uniqid("secret");

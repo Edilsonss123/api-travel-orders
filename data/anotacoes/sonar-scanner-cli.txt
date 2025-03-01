@@ -1,0 +1,31 @@
+#para não precisar instalar o sonar scaner executaremos de atraves do docker utilizando a rede network
+#-X para rodar no modo debbug
+
+docker run \
+--rm \
+--network=host \
+-e SONAR_HOST_URL="http://localhost:9000"  \
+-v "./api-travel-orders:/usr/src" \
+sonarsource/sonar-scanner-cli \
+-Dsonar.projectKey=api-travel-orders \
+-Dsonar.sources=. \
+-Dsonar.host.url=http://localhost:9000 \
+-Dsonar.login=sqp_15a1ee6b610a2d61550bd089388d80392b1b00b1 \
+-Dsonar.php.version=8.2.25 \
+-Dsonar.gitignore=true \
+-Dsonar.exclusions=**/tests/result**,**/vendor/** \
+-Dsonar.php.tests.reportPaths=/usr/src/tests/result/sonar/test-results.junit.xml \
+-Dsonar.php.coverage.reportPaths=/usr/src/tests/result/sonar/clover.xml\
+-Dsonar.scanner.force-deprecated-clean=true
+
+#usando arquivo properties na raiz do projeto
+
+docker run \
+  --rm \
+  --network=host \
+  -v "./api-travel-orders:/usr/src" \
+  sonarsource/sonar-scanner-cli \
+-Dsonar.token=sqp_15a1ee6b610a2d61550bd089388d80392b1b00b1 \
+-Dsonar.scanner.force-deprecated-clean=true
+
+

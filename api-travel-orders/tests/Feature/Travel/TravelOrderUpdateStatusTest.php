@@ -17,7 +17,7 @@ class TravelOrderUpdateStatusTest extends TestCase
     public function testUpdateTravelOrderStatusSuccess()
     {
         $token = $this->getAuthToken();
-        
+
         $orderTravel = TravelOrder::factory()->create([
             "status" => OrderStatusVO::Requested->value
         ]);
@@ -27,7 +27,8 @@ class TravelOrderUpdateStatusTest extends TestCase
         $response->assertStatus(200);
         $response->assertJson(['success' => true]);
         $this->assertEquals($orderTravel->id, $response->json("result.order.id"));
-        $this->assertSame([
+        $this->assertSame(
+            [
             'id', 'travelerName', 'destination', 'departureDate',
             'returnDate', 'status', 'created_at', 'updated_at'
         ],
@@ -40,7 +41,7 @@ class TravelOrderUpdateStatusTest extends TestCase
         $token = $this->getAuthToken();
 
         $response = $this->withToken($token)->put('/api/travel/orders/1/status', ['status' => 'invalid-status']);
-        
+
         $response->assertStatus(400);
         $this->assertEquals([
             "The selected order status is invalid."
@@ -53,14 +54,14 @@ class TravelOrderUpdateStatusTest extends TestCase
     public function testUpdateTravelOrderStatusWithException($exception, $expectedStatus, $expectedMessage)
     {
         $token = $this->getAuthToken();
-        
+
         $mockService = Mockery::mock(ITravelOrderService::class);
         $mockService->shouldReceive('updateStatus')
             ->andThrow($exception);
         $this->app->instance(ITravelOrderService::class, $mockService);
 
         $response = $this->withToken($token)->put('/api/travel/orders/1/status', ['status' => OrderStatusVO::Approved->value]);
-        
+
         $response->assertStatus($expectedStatus);
         $response->assertJson(['success' => false, 'message' => $expectedMessage]);
     }
@@ -84,7 +85,7 @@ class TravelOrderUpdateStatusTest extends TestCase
     public function testUpdateTravelOrderStatusWithoutAuthentication()
     {
         $response = $this->put('/api/travel/orders/1/status', ['status' => OrderStatusVO::Approved->value]);
-        
+
         $response->assertStatus(401);
     }
 

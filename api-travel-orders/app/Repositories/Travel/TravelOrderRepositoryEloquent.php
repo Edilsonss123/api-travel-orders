@@ -5,7 +5,6 @@ namespace App\Repositories\Travel;
 use App\Models\Travel\TravelOrder;
 use App\Repositories\Repository;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class TravelOrderRepositoryEloquent extends Repository implements ITravelOrderRepository
@@ -17,7 +16,7 @@ class TravelOrderRepositoryEloquent extends Repository implements ITravelOrderRe
 
     public function getOrders(array $filters, int $perPage): LengthAwarePaginator
     {
-        $orders = $this->model->select([
+        return $this->model->select([
             "travel_orders.id",
             "travel_orders.travelerName",
             "travel_orders.destination",
@@ -35,7 +34,6 @@ class TravelOrderRepositoryEloquent extends Repository implements ITravelOrderRe
         ->orderby("travel_orders.status")
         ->orderby("travel_orders.destination")
         ->paginate($perPage);
-        return $orders;
     }
 
     public function findOrderById($id): null|Model

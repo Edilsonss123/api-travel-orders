@@ -1,0 +1,33 @@
+composer require friendsofphp/php-cs-fixer --dev
+
+somente rodar analise
+vendor/bin/php-cs-fixer fix --dry-run --diff
+
+rodar analise e correção 
+vendor/bin/php-cs-fixer fix
+
+
+
+PSR-1 é um ponto de partida, garantindo que o código esteja organizado e legível.
+PSR-2 lida com detalhes de estilo, como indentação e formatação de código.
+PSR-12 expande o PSR-2 para incluir regras mais recentes e avançadas, incluindo práticas para versões mais recentes do PHP.
+
+----------------------------------------------------------
+O que é o PHPStan?
+
+PHPStan é uma ferramenta de análise estática de código para PHP, focada em detecção de erros e problemas lógicos antes de rodar o código. Ele verifica o tipo de dados, a consistência dos parâmetros, as chamadas de funções, entre outros.
+
+composer require --dev phpstan/phpstan
+
+vendor/bin/phpstan analyse {pasta1} {pasta2}
+vendor/bin/phpstan analyse -c {caminho arquivo config}
+vendor/bin/phpstan analyse -c phpstan.neon 
+----------------------------------------------------------
+
+Rodando o PHP_CodeSniffer
+
+realizar analise
+vendor/bin/phpcs --standard=PSR1 {pasta/}
+
+realiza correção
+vendor/bin/phpcbf --standard=PSR1 app/

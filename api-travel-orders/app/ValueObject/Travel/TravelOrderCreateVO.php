@@ -42,7 +42,7 @@ final class TravelOrderCreateVO
         $errors[] = $this->validateReturnDate($returnDate, $departureDate);
         $errors[] = $this->validateStatus($status);
         $errors = array_values(array_filter($errors));
-        if (count($errors) > 0) {
+        if (!empty($errors)) {
             throw new TravelException("Invalid Data", 400, null, $errors);
         }
     }

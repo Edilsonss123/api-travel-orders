@@ -1,4 +1,5 @@
 <?php
+
 namespace App\ValueObject\Auth;
 
 abstract class UserValidationVO
@@ -27,7 +28,7 @@ abstract class UserValidationVO
         return null;
     }
 
-    
+
     protected function validateName(string $name): ?string
     {
         if (empty($name)) {
